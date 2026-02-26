@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Employee – Exclusive Real Estate Benefits - Dar Wa Emaar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── RESET & BASE ── */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; background-color: #fff; padding-top: 60px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+
+        /* ── HEADER ── */
+        .header { position: fixed; top: 0; left: 0; right: 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 8px 0; }
+        .header-content { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+        .logo img { height: 36px; flex-shrink: 0; }
+        .main-nav { display: flex; }
+        .main-nav ul { display: flex; gap: 18px; }
+        .main-nav a { font-size: 13px; font-weight: 500; color: #333; white-space: nowrap; transition: color 0.3s; }
+        .main-nav a:hover { color: #1a5f7a; }
+        .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: auto; }
+        .whatsapp-btn { width: 32px; height: 32px; background: #25d366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: transform 0.3s; }
+        .whatsapp-btn:hover { transform: scale(1.1); }
+        .contact-btn { background: #1a5f7a; color: #fff; padding: 6px 14px; border-radius: 5px; font-weight: 500; font-size: 13px; transition: background 0.3s; }
+        .contact-btn:hover { background: #134a5f; }
+        .lang-switch { display: flex; gap: 5px; font-size: 14px; }
+        .lang-switch a { color: #333; }
+        .lang-switch a.active { font-weight: 600; color: #1a5f7a; }
+
+        /* ── BUTTONS ── */
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 5px; font-weight: 500; cursor: pointer; transition: all 0.3s; border: none; font-size: 16px; font-family: 'Inter', sans-serif; }
+        .btn-primary { background: #1a5f7a; color: #fff; }
+        .btn-primary:hover { background: #134a5f; }
+        .btn-outline { border: 2px solid #1a5f7a; color: #1a5f7a; background: transparent; }
+        .btn-outline:hover { background: #1a5f7a; color: #fff; }
+        .btn-block { width: 100%; justify-content: center; }
+
+        /* ── FOOTER ── */
+        .footer { background: #1a2a3a; color: #fff; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+        .footer-logo { height: 50px; margin-bottom: 15px; filter: brightness(0) invert(1); }
+        .footer-col p { color: #aaa; font-size: 14px; line-height: 1.8; }
+        .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; color: #fff; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul a { color: #aaa; font-size: 14px; transition: color 0.3s; }
+        .footer-col ul a:hover { color: #fff; }
+        .social-links { display: flex; gap: 10px; margin-top: 20px; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; transition: background 0.3s; }
+        .social-links a:hover { background: #1a5f7a; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; color: #666; font-size: 14px; }
+
+        /* ── DEMO BADGE ── */
+        .demo-badge { background: linear-gradient(135deg, #f5a623, #e8960f); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+
+        /* ── PLACEHOLDER HIGHLIGHT ── */
+        .ph { background: rgba(245,166,35,0.15); border: 1.5px dashed #f5a623; border-radius: 4px; padding: 1px 6px; color: #a06000; font-weight: 700; white-space: nowrap; }
+
+        /* ── CURSOR ── */
+        #cursor-follower { width: 30px; height: 30px; border: 2px solid #fff; mix-blend-mode: difference; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease-out, left 0.08s ease-out, top 0.08s ease-out, opacity 0.3s; transform: translate(-50%, -50%); opacity: 0; }
+
+        /* ── PAGE STYLES ── */
+        :root {
+            --teal: #1a5f7a;
+            --teal2: #2d8a9e;
+            --gold: #f5a623;
+            --navy: #1a2a3a;
+            --green: #00843d;
+            --green2: #005c2b;
+            --light: #f8f9fa;
+        }
+
+        /* HERO */
+        .hero-wrap { background: linear-gradient(135deg, var(--navy) 0%, #1a3d52 50%, var(--teal) 100%); padding: 90px 0 70px; position: relative; overflow: hidden; }
+        .hero-wrap::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 75% 40%, rgba(0,132,61,0.12) 0%, transparent 55%), radial-gradient(ellipse at 10% 80%, rgba(245,166,35,0.07) 0%, transparent 50%); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+        .hero-partnership { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); padding: 8px 18px; border-radius: 50px; margin-bottom: 24px; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+        .hero-partnership .dwe-label { color: var(--gold); }
+        .hero-partnership .sep { color: rgba(255,255,255,0.3); }
+        .hero-partnership .aramco-label { color: #6dde9e; }
+        .hero-partnership .excl { background: var(--green); color: #fff; padding: 2px 10px; border-radius: 4px; font-size: 10px; }
+        .hero-left h1 { font-size: 3rem; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 18px; }
+        .hero-left h1 span { color: var(--gold); }
+        .hero-left p { color: rgba(255,255,255,0.78); font-size: 1rem; line-height: 1.8; margin-bottom: 30px; }
+        .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .stat-box { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 22px 20px; text-align: center; backdrop-filter: blur(6px); transition: background 0.2s; }
+        .stat-box:hover { background: rgba(255,255,255,0.12); }
+        .stat-box .num { font-size: 2.2rem; font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+        .stat-box .lbl { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 500; }
+
+        /* ABOUT */
+        .about-section { padding: 80px 0; background: #fff; }
+        .sl { text-align:center; font-size:12px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--teal); margin-bottom:8px; }
+        .st { text-align:center; font-size:1.9rem; font-weight:800; color:var(--navy); margin-bottom:10px; }
+        .ss { text-align:center; color:#777; font-size:15px; margin-bottom:50px; max-width:560px; margin-left:auto; margin-right:auto; }
+        .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 50px; }
+        .vm-card { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .vm-card-head { background: linear-gradient(135deg, var(--teal), var(--teal2)); padding: 22px 28px; display: flex; align-items: center; gap: 14px; }
+        .vm-card-head i { font-size: 22px; color: var(--gold); }
+        .vm-card-head h3 { color: #fff; font-size: 1rem; font-weight: 700; margin: 0; }
+        .vm-card-body { padding: 24px 28px; background: var(--light); }
+        .vm-card-body p { color: #444; font-size: 14px; line-height: 1.8; margin: 0; }
+        .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 50px; }
+        .value-card { background: var(--light); border-radius: 14px; padding: 28px 20px; text-align: center; border-top: 3px solid var(--teal); transition: transform 0.2s, box-shadow 0.2s; }
+        .value-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .value-card i { font-size: 28px; color: var(--teal); margin-bottom: 12px; display: block; }
+        .value-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .value-card p { font-size: 13px; color: #666; line-height: 1.6; margin: 0; }
+        .strengths-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .strength-card { background: linear-gradient(135deg, var(--navy), #1a3d52); border-radius: 14px; padding: 28px 20px; text-align: center; color: #fff; transition: transform 0.2s; }
+        .strength-card:hover { transform: translateY(-4px); }
+        .strength-card i { font-size: 28px; color: var(--gold); margin-bottom: 14px; display: block; }
+        .strength-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+        .strength-card p { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.6; margin: 0; }
+
+        /* PROJECTS */
+        .projects-section { padding: 80px 0; background: var(--light); }
+        .projects-tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 50px; flex-wrap: wrap; }
+        .ptab { padding: 10px 28px; border-radius: 50px; font-size: 14px; font-weight: 600; cursor: pointer; border: 2px solid var(--teal); color: var(--teal); background: #fff; transition: all 0.2s; }
+        .ptab.active, .ptab:hover { background: var(--teal); color: #fff; }
+        .project-panel { display: none; }
+        .project-panel.active { display: block; }
+        .panel-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start; margin-bottom: 40px; background: #fff; border-radius: 16px; padding: 36px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .panel-intro-label { background: linear-gradient(135deg, var(--teal), var(--teal2)); color: #fff; border-radius: 12px; padding: 24px; text-align: center; }
+        .panel-intro-label i { font-size: 36px; color: var(--gold); margin-bottom: 12px; display: block; }
+        .panel-intro-label h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 6px; }
+        .panel-intro-label span { font-size: 12px; opacity: 0.8; }
+        .panel-intro-text h2 { font-size: 1.5rem; font-weight: 800; color: var(--navy); margin-bottom: 12px; }
+        .panel-intro-text p { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 16px; }
+        .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .proj-card { background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 3px 15px rgba(0,0,0,0.07); border-left: 4px solid var(--teal); transition: transform 0.2s, box-shadow 0.2s; }
+        .proj-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.12); }
+        .proj-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .proj-card h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin: 0; }
+        .proj-card .units-badge { background: var(--teal); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+        .proj-card .location { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 8px; }
+        .proj-card p { font-size: 13px; color: #666; line-height: 1.6; margin: 0; }
+
+        /* BENEFITS */
+        .benefits-section { padding: 80px 0; background: #fff; }
+        .ben-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 50px; }
+        .ben-card { border-radius: 16px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.09); }
+        .ben-head { padding: 26px 30px; display: flex; align-items: center; gap: 14px; }
+        .ben-head.teal { background: linear-gradient(135deg, var(--teal), var(--teal2)); }
+        .ben-head.gold { background: linear-gradient(135deg, #b8860b, #daa520); }
+        .ben-head i { font-size: 26px; color: #fff; opacity: 0.9; }
+        .ben-head h3 { color: #fff; font-size: 1.1rem; font-weight: 700; margin: 0; }
+        .ben-body { padding: 28px 30px; background: var(--light); }
+        .ben-list { list-style: none; padding: 0; margin: 0; }
+        .ben-list li { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-bottom: 1px solid #e8e8e8; font-size: 14px; color: #333; line-height: 1.5; }
+        .ben-list li:last-child { border-bottom: none; }
+        .ben-list li i { color: var(--teal); margin-top: 2px; flex-shrink: 0; }
+        .ben-list.gold-icons li i { color: #b8860b; }
+
+        /* FORM */
+        .form-section { padding: 80px 0; background: var(--navy); }
+        .form-section .sl { color: var(--gold); }
+        .form-section .st { color: #fff; }
+        .form-section .ss { color: rgba(255,255,255,0.6); }
+        .form-card { max-width: 860px; margin: 0 auto; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.35); }
+        .form-top { background: linear-gradient(135deg, var(--green), var(--green2)); padding: 28px 40px; display: flex; align-items: center; gap: 18px; }
+        .form-top-ico { width: 50px; height: 50px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; flex-shrink: 0; }
+        .form-top h2 { color: #fff; font-size: 1.25rem; font-weight: 700; margin: 0 0 4px; }
+        .form-top p { color: rgba(255,255,255,0.75); font-size: 13px; margin: 0; }
+        .form-body { padding: 40px; }
+        .fg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .fg { display: flex; flex-direction: column; gap: 7px; }
+        .fg.full { grid-column: 1 / -1; }
+        .fg label { font-size: 13px; font-weight: 600; color: #444; }
+        .fg label i { color: var(--teal); margin-right: 5px; }
+        .fg input, .fg select { padding: 12px 16px; border: 1.5px solid #e0e0e0; border-radius: 9px; font-size: 14px; font-family: 'Inter', sans-serif; color: #333; background: #fafafa; transition: border-color 0.2s, box-shadow 0.2s; }
+        .fg input:focus, .fg select:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(26,95,122,0.1); background: #fff; }
+        .fg .hint { font-size: 11px; color: #aaa; }
+        .success-box { background: #e8f5e9; border: 1.5px solid #a5d6a7; border-radius: 12px; padding: 18px 24px; display: none; align-items: center; gap: 14px; margin-bottom: 24px; }
+        .success-box i { font-size: 26px; color: var(--green); flex-shrink: 0; }
+        .success-box strong { display: block; font-size: 14px; color: #1b5e20; margin-bottom: 2px; }
+        .success-box span { font-size: 13px; color: #388e3c; }
+
+        /* NOTICE BAR */
+        .notice-bar { background: #fff8e1; border-left: 4px solid var(--gold); padding: 13px 24px; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #555; }
+        .notice-bar i { color: var(--gold); font-size: 18px; flex-shrink: 0; }
+
+        /* SECTION DIVIDER */
+        .section-divider { text-align: center; margin: 40px 0 0; font-size: 13px; color: #888; }
+        .section-divider a { color: var(--teal); font-weight: 600; text-decoration: none; }
+        .section-divider a:hover { text-decoration: underline; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .values-grid, .strengths-grid { grid-template-columns: repeat(2, 1fr); }
+            .proj-grid { grid-template-columns: repeat(2, 1fr); }
+            .panel-intro { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .main-nav { display: none; }
+            .hero-left h1 { font-size: 2rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .vm-grid { grid-template-columns: 1fr; }
+            .values-grid, .strengths-grid { grid-template-columns: 1fr 1fr; }
+            .proj-grid { grid-template-columns: 1fr; }
+            .ben-grid { grid-template-columns: 1fr; }
+            .fg-grid { grid-template-columns: 1fr; }
+            .fg.full { grid-column: 1; }
+            .form-body { padding: 24px; }
+            .form-top { padding: 24px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .social-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="#">
+                    <img src="https://darwaemaar.com/wp-content/uploads/2024/07/logo.svg" alt="DWE Logo">
+                </a>
+            </div>
+            <div class="demo-badge">
+                <i class="fas fa-flask"></i> Partnership DEMO
+            </div>
+            <div class="header-actions">
+                <div class="lang-switch">
+                    <a href="partner.html" class="active">EN</a>
+                    <span>|</span>
+                    <a href="partner-ar.html">AR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero-wrap">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-left">
+                        <div class="hero-partnership">
+                            <span class="dwe-label">DAR WA EMAAR</span>
+                            <span class="sep">×</span>
+                            <span class="aramco-label ph">OUR PARTNER</span>
+                            <span class="excl">Exclusive</span>
+                        </div>
+                        <h1>Your Gateway to <span>Premium</span> Real Estate — Exclusively for <span class="ph">Partner Employees</span></h1>
+                        <p>As part of our strategic partnership, Dar Wa Emaar extends preferential rates, priority access, and dedicated services to <span class="ph">our partner</span>'s employees across the Kingdom. Explore who we are and register your interest below.</p>
+                        <div class="hero-btns">
+                            <a href="#apply" class="btn btn-primary">Register Your Interest</a>
+                            <a href="#projects" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:#fff;">Explore Projects</a>
+                        </div>
+                    </div>
+                    <div class="hero-right">
+                        <div class="hero-stats">
+                            <div class="stat-box"><div class="num">20+</div><div class="lbl">Years of Experience</div></div>
+                            <div class="stat-box"><div class="num">15+</div><div class="lbl">Completed Projects</div></div>
+                            <div class="stat-box"><div class="num">8,000+</div><div class="lbl">Residential Units</div></div>
+                            <div class="stat-box"><div class="num">6</div><div class="lbl">Cities Across KSA</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTICE BAR -->
+        <div class="notice-bar">
+            <i class="fas fa-shield-alt"></i>
+            <strong>Exclusive Access:</strong>&nbsp; This page is shared exclusively with <span class="ph">our partner</span>'s employees through the HR Department. Benefits are valid for verified <span class="ph">partner employees</span> only.
+        </div>
+
+        <!-- ABOUT DWE -->
+        <section class="about-section">
+            <div class="container">
+                <p class="sl">Who We Are</p>
+                <h2 class="st">About Dar Wa Emaar</h2>
+                <p class="ss">A leading Saudi real estate developer with a legacy of building thriving communities across the Kingdom.</p>
+
+                <div class="vm-grid">
+                    <div class="vm-card">
+                        <div class="vm-card-head"><i class="fas fa-eye"></i><h3>Our Vision</h3></div>
+                        <div class="vm-card-body"><p>To be the leading real estate developer in the Kingdom of Saudi Arabia, creating integrated communities that elevate quality of life and inspire sustainable living for generations to come.</p></div>
+                    </div>
+                    <div class="vm-card">
+                        <div class="vm-card-head"><i class="fas fa-bullseye"></i><h3>Our Mission</h3></div>
+                        <div class="vm-card-body"><p>To develop innovative real estate solutions through strategic partnerships, outstanding design, and a commitment to excellence — delivering homes that meet the aspirations of Saudi families and investors alike.</p></div>
+                    </div>
+                </div>
+
+                <p class="sl" style="margin-top:20px;">Core Values</p>
+                <h2 class="st" style="margin-bottom:30px;">What We Stand For</h2>
+                <div class="values-grid">
+                    <div class="value-card"><i class="fas fa-medal"></i><h4>Quality</h4><p>Uncompromising standards in every unit, every finish, and every community we build.</p></div>
+                    <div class="value-card"><i class="fas fa-lightbulb"></i><h4>Innovation</h4><p>Forward-thinking design and construction methods that set new benchmarks in the market.</p></div>
+                    <div class="value-card"><i class="fas fa-leaf"></i><h4>Sustainability</h4><p>Building communities with long-term environmental and social responsibility at their core.</p></div>
+                    <div class="value-card"><i class="fas fa-handshake"></i><h4>Trust</h4><p>Transparent partnerships and honest relationships with every client and stakeholder.</p></div>
+                </div>
+
+                <p class="sl" style="margin-top:50px;">Our Strengths</p>
+                <h2 class="st" style="margin-bottom:30px;">Why Choose Dar Wa Emaar</h2>
+                <div class="strengths-grid">
+                    <div class="strength-card"><i class="fas fa-hard-hat"></i><h4>Real Estate Expertise</h4><p>Over two decades of proven experience developing residential projects across Saudi Arabia.</p></div>
+                    <div class="strength-card"><i class="fas fa-city"></i><h4>Major Projects Management</h4><p>Delivering large-scale, multi-phase communities with thousands of residential units on time.</p></div>
+                    <div class="strength-card"><i class="fas fa-network-wired"></i><h4>Strategic Partnerships</h4><p>Collaborating with leading institutions and corporations to provide tailored housing solutions.</p></div>
+                    <div class="strength-card"><i class="fas fa-chart-line"></i><h4>Innovative Investment</h4><p>Smart real estate investment models that deliver value for families and investors alike.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="projects-section" id="projects">
+            <div class="container">
+                <p class="sl">Our Portfolio</p>
+                <h2 class="st">Explore Our Projects</h2>
+                <p class="ss">Discover three distinct residential collections — each crafted for a unique lifestyle across the Kingdom.</p>
+
+                <div class="projects-tabs">
+                    <div class="ptab active" onclick="switchTab('saraya', this)">Saraya</div>
+                    <div class="ptab" onclick="switchTab('communities', this)">Communities</div>
+                    <div class="ptab" onclick="switchTab('tala', this)">Tala</div>
+                </div>
+
+                <!-- SARAYA -->
+                <div class="project-panel active" id="panel-saraya">
+                    <div class="panel-intro">
+                        <div class="panel-intro-label"><i class="fas fa-crown"></i><h3>Saraya Collection</h3><span>9 Projects · 6 Cities</span></div>
+                        <div class="panel-intro-text">
+                            <h2>Flagship Luxury Residential Communities</h2>
+                            <p>The Saraya Collection represents Dar Wa Emaar's premium portfolio of residential developments, spanning Riyadh, Khobar, Dammam, Jeddah, Madinah, and Qatif. Each Saraya project is a modern architectural masterpiece combining quality, comfort, and strategic location — designed to inspire the world around you.</p>
+                            <a href="https://darwaemaar.com/communities/" target="_blank" class="btn btn-outline" style="font-size:13px; padding:8px 20px;">View Full Portfolio <i class="fas fa-external-link-alt" style="font-size:11px; margin-left:6px;"></i></a>
+                        </div>
+                    </div>
+                    <div class="proj-grid">
+                        <div class="proj-card"><div class="proj-card-top"><h4>Saraya Al-Narjis</h4><span class="units-badge">1,294 Units</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> Riyadh</div><p>Located at the intersection of Othman bin Affan and King Salman roads. Diverse spaces, contemporary designs, premium quality, and full-service amenities.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>Saraya Al-Ruba</h4><span class="units-badge">1,155 Units</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> East Riyadh</div><p>A modern architectural masterpiece with 8 distinct residential models. Near National Guard Hospital and King Abdulaziz University Medical College.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>Saraya Al-Jawan</h4><span class="units-badge">936 Units</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> North Riyadh</div><p>Two refined architectural models in an upscale environment, offering a sophisticated lifestyle in one of Riyadh's most sought-after districts.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>Saraya Al-Fursan 2</h4><span class="units-badge">718 Units</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> Northeast Riyadh</div><p>Part of a larger 35-million-sqm development, 14km from the airport and connected to the metro network.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>Saraya Al-Badr</h4><span class="units-badge">634 Units</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> Madinah</div><p>Strategically positioned less than 15 minutes from the Prophet's Mosque, connected to main transportation networks.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>Saraya Al-Sharq</h4><span class="units-badge">616 Units</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> Dammam</div><p>A landmark waterfront development in Dammam, emphasizing modern design, quality planning, and integrated facilities.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>Saraya Al-Bahar</h4><span class="units-badge">425 Units</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> Qatif</div><p>An integrated living environment on the Arabian Gulf coastline, near major road networks and key city landmarks.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>Saraya Al-Buhairat</h4><span class="units-badge">358 Units</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> Jeddah</div><p>A new residential landmark blending comfort, luxury, and Jeddah's rich heritage in the Sedayem district.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>Saraya Al-Olaya</h4><span class="units-badge">324 Units</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> Khobar</div><p>An integrated landmark addressing varied lifestyle needs with meticulous construction quality in the heart of Al Khobar.</p></div>
+                    </div>
+                </div>
+
+                <!-- COMMUNITIES -->
+                <div class="project-panel" id="panel-communities">
+                    <div class="panel-intro">
+                        <div class="panel-intro-label"><i class="fas fa-people-roof"></i><h3>Communities</h3><span>2 Projects · Riyadh</span></div>
+                        <div class="panel-intro-text">
+                            <h2>A New Concept of Modern Neighbourhood Living</h2>
+                            <p>DWE Communities redefine what it means to live in a neighbourhood. Open designs and lush gardens create a healthy environment for families, while integrated commercial facilities and diverse residential options ensure everything you need is moments away.</p>
+                            <a href="https://darwaemaar.com/ar-communities/" target="_blank" class="btn btn-outline" style="font-size:13px; padding:8px 20px;">Learn More <i class="fas fa-external-link-alt" style="font-size:11px; margin-left:6px;"></i></a>
+                        </div>
+                    </div>
+                    <div class="proj-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="proj-card" style="border-left-color: var(--gold);"><div class="proj-card-top"><h4>Al Narjis Communities</h4><span class="units-badge">750 Units</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> Riyadh</div><p>Carefully designed homes combining quality, comfort, and practicality. Features open parking, smart designs, and generous green spaces. <strong style="color:var(--green);">Available Now.</strong></p></div>
+                        <div class="proj-card" style="border-left-color: var(--gold);"><div class="proj-card-top"><h4>Al Fursan Communities</h4><span class="units-badge">1,718 Units</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> Riyadh</div><p>A luxury lifestyle blending refined architectural designs, meticulously landscaped gardens, and modern amenities including paddle courts. <strong style="color:var(--gold);">Coming Soon.</strong></p></div>
+                    </div>
+                    <div style="background:#fff; border-radius:14px; padding:28px 30px; margin-top:20px; box-shadow:0 3px 15px rgba(0,0,0,0.06);">
+                        <h4 style="color:var(--navy); margin-bottom:16px; font-size:15px;"><i class="fas fa-star" style="color:var(--gold); margin-right:8px;"></i>Community Highlights</h4>
+                        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+                            <div style="text-align:center; padding:16px; background:var(--light); border-radius:10px;"><i class="fas fa-tree" style="color:var(--teal); font-size:22px; margin-bottom:8px; display:block;"></i><div style="font-size:13px; font-weight:600; color:var(--navy);">Spacious Green Areas</div></div>
+                            <div style="text-align:center; padding:16px; background:var(--light); border-radius:10px;"><i class="fas fa-store" style="color:var(--teal); font-size:22px; margin-bottom:8px; display:block;"></i><div style="font-size:13px; font-weight:600; color:var(--navy);">Integrated Commercial Facilities</div></div>
+                            <div style="text-align:center; padding:16px; background:var(--light); border-radius:10px;"><i class="fas fa-home" style="color:var(--teal); font-size:22px; margin-bottom:8px; display:block;"></i><div style="font-size:13px; font-weight:600; color:var(--navy);">Diverse Residential Units</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TALA -->
+                <div class="project-panel" id="panel-tala">
+                    <div class="panel-intro">
+                        <div class="panel-intro-label"><i class="fas fa-gem"></i><h3>Tala Collection</h3><span>2 Projects · Riyadh &amp; Khobar</span></div>
+                        <div class="panel-intro-text">
+                            <h2>Contemporary Design Meets Elevated Living</h2>
+                            <p>Tala goes beyond shelter — it is where emotions, family bonds, and lifestyle aspirations come together. Each Tala development is a contemporary architectural masterpiece featuring seamless interiors, floor-to-ceiling glass, and abundant natural light. Three pillars define Tala: <strong>diverse spaces</strong>, <strong>attractive design</strong>, and <strong>high quality</strong>.</p>
+                            <a href="https://darwaemaar.com/tala/" target="_blank" class="btn btn-outline" style="font-size:13px; padding:8px 20px;">Discover Tala <i class="fas fa-external-link-alt" style="font-size:11px; margin-left:6px;"></i></a>
+                        </div>
+                    </div>
+                    <div class="proj-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="proj-card" style="border-left-color: #9c5700;"><div class="proj-card-top"><h4>Tala Al-Khuzam</h4><span class="units-badge" style="background:#9c5700;">1,298 Units</span></div><div class="location" style="color:#9c5700;"><i class="fas fa-map-marker-alt"></i> North Riyadh</div><p>Part of NHC's major suburban development spanning over 30 million square meters near King Khalid International Airport.</p></div>
+                        <div class="proj-card" style="border-left-color: #9c5700;"><div class="proj-card-top"><h4>Tala Al-Seef</h4><span class="units-badge" style="background:#9c5700;">135 Units</span></div><div class="location" style="color:#9c5700;"><i class="fas fa-map-marker-alt"></i> Al Khobar</div><p>A boutique collection featuring full-height glass walls, seamless interior spaces, and continuous flooring offering panoramic views from every angle.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFITS -->
+        <section class="benefits-section">
+            <div class="container">
+                <p class="sl">Partnership Advantages</p>
+                <h2 class="st">What the Partnership Offers</h2>
+                <p class="ss">Exclusive advantages for Saudi Aramco as an institution and for its employees as individuals.</p>
+                <div class="ben-grid">
+                    <div class="ben-card">
+                        <div class="ben-head teal"><i class="fas fa-city"></i><h3>Partnership Benefits — For <span class="ph">Our Partner</span></h3></div>
+                        <div class="ben-body">
+                            <ul class="ben-list">
+                                <li><i class="fas fa-check-circle"></i> Official and approved corporate cooperation agreement</li>
+                                <li><i class="fas fa-check-circle"></i> Special discounts and exclusive benefits for all employees</li>
+                                <li><i class="fas fa-check-circle"></i> Flexible real estate solutions tailored to the workforce's needs</li>
+                                <li><i class="fas fa-check-circle"></i> A dedicated direct point of contact from the DWE team</li>
+                                <li><i class="fas fa-check-circle"></i> Continuous follow-up and after-sale support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ben-card">
+                        <div class="ben-head gold"><i class="fas fa-users"></i><h3>Employee Benefits — For You</h3></div>
+                        <div class="ben-body">
+                            <ul class="ben-list gold-icons">
+                                <li><i class="fas fa-star"></i> Preferential pricing and special payment plans</li>
+                                <li><i class="fas fa-star"></i> Priority access to new project launches before the public</li>
+                                <li><i class="fas fa-star"></i> A dedicated personal real estate consultant</li>
+                                <li><i class="fas fa-star"></i> Specialized real estate consultancy — free of charge</li>
+                                <li><i class="fas fa-star"></i> Streamlined purchase procedures and exclusive offers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORM -->
+        <section class="form-section" id="apply">
+            <div class="container">
+                <p class="sl">Get Started</p>
+                <h2 class="st">Register Your Interest</h2>
+                <p class="ss">Fill in your details and a dedicated DWE consultant will reach out within 24 hours.</p>
+                <div class="form-card">
+                    <div class="form-top">
+                        <div class="form-top-ico"><i class="fas fa-id-badge"></i></div>
+                        <div>
+                            <h2><span class="ph">Partner Employee</span> Registration</h2>
+                            <p>Exclusively for <span class="ph">our partner</span>'s employees — all information is kept strictly confidential.</p>
+                        </div>
+                    </div>
+                    <div class="form-body">
+                        <div class="success-box" id="success-box">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Registration Submitted Successfully!</strong>
+                                <span>Thank you! A dedicated DWE consultant will contact you within 24 hours.</span>
+                            </div>
+                        </div>
+                        <!--
+                            FORMSPREE SETUP:
+                            1. Go to https://formspree.io and sign up for free
+                            2. Create a new form and copy your Form ID
+                            3. Replace "YOUR_FORM_ID" below with your actual Form ID
+                        -->
+                        <form id="aramco-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                            <div class="fg-grid">
+                                <div class="fg">
+                                    <label><i class="fas fa-user"></i> Full Name</label>
+                                    <input type="text" name="FullName" placeholder="Your full name" required>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-id-card"></i> Employee ID</label>
+                                    <input type="text" name="EmployeeId" placeholder="e.g. 12345678" required>
+                                    <span class="hint">Your badge / employee number</span>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-briefcase"></i> Job Title</label>
+                                    <input type="text" name="JobTitle" placeholder="e.g. Senior Engineer" required>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-envelope"></i> Work Email</label>
+                                    <input type="email" name="Email" placeholder="name@company.com" required>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-phone"></i> Personal Phone Number</label>
+                                    <input type="tel" name="PhoneNumber" placeholder="+966 5X XXX XXXX" required>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-building"></i> Project Interest</label>
+                                    <select name="RealEstateInterest" required>
+                                        <option value="">— Select a collection —</option>
+                                        <optgroup label="Saraya Collection">
+                                            <option value="Saraya Al-Narjis">Saraya Al-Narjis (Riyadh)</option>
+                                            <option value="Saraya Al-Ruba">Saraya Al-Ruba (Riyadh)</option>
+                                            <option value="Saraya Al-Sharq">Saraya Al-Sharq (Dammam)</option>
+                                            <option value="Saraya Al-Olaya">Saraya Al-Olaya (Khobar)</option>
+                                            <option value="Saraya Other">Other Saraya Project</option>
+                                        </optgroup>
+                                        <optgroup label="Communities">
+                                            <option value="Al Narjis Communities">Al Narjis Communities (Riyadh)</option>
+                                            <option value="Al Fursan Communities">Al Fursan Communities (Riyadh)</option>
+                                        </optgroup>
+                                        <optgroup label="Tala Collection">
+                                            <option value="Tala Al-Khuzam">Tala Al-Khuzam (Riyadh)</option>
+                                            <option value="Tala Al-Seef">Tala Al-Seef (Khobar)</option>
+                                        </optgroup>
+                                        <option value="General Inquiry">General Inquiry / Not Sure Yet</option>
+                                    </select>
+                                </div>
+                                <div class="fg full">
+                                    <label><i class="fas fa-map-marker-alt"></i> Preferred Location</label>
+                                    <select name="PreferredLocation" required>
+                                        <option value="">— Select preferred city —</option>
+                                        <option value="Khobar">Al Khobar</option>
+                                        <option value="Dhahran">Dhahran</option>
+                                        <option value="Dammam">Dammam</option>
+                                        <option value="Riyadh">Riyadh</option>
+                                        <option value="Jeddah">Jeddah</option>
+                                        <option value="Madinah">Madinah</option>
+                                        <option value="Any">No Preference</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div style="margin-top:28px;">
+                                <button type="submit" class="btn btn-primary btn-block" style="font-size:16px; padding:15px; background:linear-gradient(135deg, var(--green), var(--teal)); border:none;">
+                                    <i class="fas fa-paper-plane"></i>&nbsp; Submit Registration
+                                </button>
+                                <p style="text-align:center; font-size:12px; color:#aaa; margin-top:14px;">
+                                    <i class="fas fa-lock"></i>&nbsp; Your information is secure and used solely for processing your real estate benefits.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://darwaemaar.com/wp-content/uploads/2024/07/logo.svg" alt="DWE Logo" class="footer-logo">
+                    <p>Building communities that inspire better living.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Latest Projects</h4>
+                    <ul>
+                        <li><a href="#">Al Narjes Heights</a></li>
+                        <li><a href="#">Other Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About DWE</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Office Locations</h4>
+                    <p><strong>Khobar Office</strong><br>King Fahd Road, Al Khobar</p>
+                    <p><strong>Riyadh Office</strong><br>Olaya Street, Riyadh</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dar Wa Emaar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cursor-follower"></div>
+
+    <script>
+        // Tab switcher
+        function switchTab(name, el) {
+            document.querySelectorAll('.project-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+            document.getElementById('panel-' + name).classList.add('active');
+            el.classList.add('active');
+        }
+
+        // Cursor follower
+        (function () {
+            var follower = document.getElementById('cursor-follower');
+            document.addEventListener('mousemove', function (e) {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+                follower.style.opacity = '1';
+            });
+            document.addEventListener('mouseleave', function () {
+                follower.style.opacity = '0';
+            });
+        })();
+
+        // Formspree AJAX submission
+        const form = document.getElementById('aramco-form');
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    const successBox = document.getElementById('success-box');
+                    successBox.style.display = 'flex';
+                    form.style.display = 'none';
+                    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (err) {
+                alert('Network error. Please try again.');
+            }
+        });
+    </script>
+
+</body>
+</html>

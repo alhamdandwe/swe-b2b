@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موظفو الشريك – مزايا عقارية حصرية - دار وعمار</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── RESET & BASE ── */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Tajawal', sans-serif; line-height: 1.6; color: #333; background-color: #fff; padding-top: 60px; direction: rtl; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+
+        /* ── HEADER ── */
+        .header { position: fixed; top: 0; left: 0; right: 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 8px 0; }
+        .header-content { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+        .logo img { height: 36px; flex-shrink: 0; }
+        .main-nav { display: flex; }
+        .main-nav ul { display: flex; gap: 18px; }
+        .main-nav a { font-size: 13px; font-weight: 500; color: #333; white-space: nowrap; transition: color 0.3s; }
+        .main-nav a:hover { color: #1a5f7a; }
+        .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-right: auto; }
+        .whatsapp-btn { width: 32px; height: 32px; background: #25d366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: transform 0.3s; }
+        .whatsapp-btn:hover { transform: scale(1.1); }
+        .contact-btn { background: #1a5f7a; color: #fff; padding: 6px 14px; border-radius: 5px; font-weight: 500; font-size: 13px; transition: background 0.3s; }
+        .contact-btn:hover { background: #134a5f; }
+        .lang-switch { display: flex; gap: 5px; font-size: 14px; font-family: 'Inter', sans-serif; }
+        .lang-switch a { color: #333; }
+        .lang-switch a.active { font-weight: 600; color: #1a5f7a; }
+
+        /* ── BUTTONS ── */
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 5px; font-weight: 700; cursor: pointer; transition: all 0.3s; border: none; font-size: 16px; font-family: 'Tajawal', sans-serif; }
+        .btn-primary { background: #1a5f7a; color: #fff; }
+        .btn-primary:hover { background: #134a5f; }
+        .btn-outline { border: 2px solid #1a5f7a; color: #1a5f7a; background: transparent; }
+        .btn-outline:hover { background: #1a5f7a; color: #fff; }
+        .btn-block { width: 100%; justify-content: center; }
+
+        /* ── FOOTER ── */
+        .footer { background: #1a2a3a; color: #fff; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+        .footer-logo { height: 50px; margin-bottom: 15px; filter: brightness(0) invert(1); }
+        .footer-col p { color: #aaa; font-size: 14px; line-height: 1.8; }
+        .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; color: #fff; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul a { color: #aaa; font-size: 14px; transition: color 0.3s; }
+        .footer-col ul a:hover { color: #fff; }
+        .social-links { display: flex; gap: 10px; margin-top: 20px; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; transition: background 0.3s; }
+        .social-links a:hover { background: #1a5f7a; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; color: #666; font-size: 14px; }
+
+        /* ── DEMO BADGE ── */
+        .demo-badge { background: linear-gradient(135deg, #f5a623, #e8960f); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+
+        /* ── PLACEHOLDER HIGHLIGHT ── */
+        .ph { background: rgba(245,166,35,0.15); border: 1.5px dashed #f5a623; border-radius: 4px; padding: 1px 6px; color: #a06000; font-weight: 700; white-space: nowrap; }
+
+        /* ── CURSOR ── */
+        #cursor-follower { width: 30px; height: 30px; border: 2px solid #fff; mix-blend-mode: difference; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease-out, left 0.08s ease-out, top 0.08s ease-out, opacity 0.3s; transform: translate(-50%, -50%); opacity: 0; }
+
+        /* ── PAGE STYLES ── */
+        :root {
+            --teal: #1a5f7a;
+            --teal2: #2d8a9e;
+            --gold: #f5a623;
+            --navy: #1a2a3a;
+            --green: #00843d;
+            --green2: #005c2b;
+            --light: #f8f9fa;
+        }
+
+        /* HERO */
+        .hero-wrap { background: linear-gradient(135deg, var(--navy) 0%, #1a3d52 50%, var(--teal) 100%); padding: 90px 0 70px; position: relative; overflow: hidden; }
+        .hero-wrap::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 25% 40%, rgba(0,132,61,0.12) 0%, transparent 55%), radial-gradient(ellipse at 90% 80%, rgba(245,166,35,0.07) 0%, transparent 50%); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+        .hero-partnership { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); padding: 8px 18px; border-radius: 50px; margin-bottom: 24px; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+        .hero-partnership .dwe-label { color: var(--gold); font-family: 'Inter', sans-serif; }
+        .hero-partnership .sep { color: rgba(255,255,255,0.3); }
+        .hero-partnership .aramco-label { color: #6dde9e; font-family: 'Inter', sans-serif; }
+        .hero-partnership .excl { background: var(--green); color: #fff; padding: 2px 12px; border-radius: 4px; font-size: 11px; }
+        .hero-left h1 { font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1.3; margin-bottom: 18px; }
+        .hero-left h1 span { color: var(--gold); }
+        .hero-left p { color: rgba(255,255,255,0.78); font-size: 1.05rem; line-height: 1.9; margin-bottom: 30px; }
+        .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .stat-box { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 22px 20px; text-align: center; backdrop-filter: blur(6px); }
+        .stat-box .num { font-size: 2.2rem; font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 6px; font-family: 'Inter', sans-serif; }
+        .stat-box .lbl { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 500; }
+
+        /* NOTICE */
+        .notice-bar { background: #fff8e1; border-right: 4px solid var(--gold); border-left: none; padding: 13px 24px; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #555; }
+        .notice-bar i { color: var(--gold); font-size: 18px; flex-shrink: 0; }
+
+        /* ABOUT */
+        .about-section { padding: 80px 0; background: #fff; }
+        .sl { text-align:center; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--teal); margin-bottom:8px; }
+        .st { text-align:center; font-size:1.9rem; font-weight:800; color:var(--navy); margin-bottom:10px; }
+        .ss { text-align:center; color:#777; font-size:15px; margin-bottom:50px; max-width:560px; margin-left:auto; margin-right:auto; }
+        .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 50px; }
+        .vm-card { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .vm-card-head { background: linear-gradient(135deg, var(--teal), var(--teal2)); padding: 22px 28px; display: flex; align-items: center; gap: 14px; }
+        .vm-card-head i { font-size: 22px; color: var(--gold); }
+        .vm-card-head h3 { color: #fff; font-size: 1rem; font-weight: 700; margin: 0; }
+        .vm-card-body { padding: 24px 28px; background: var(--light); }
+        .vm-card-body p { color: #444; font-size: 14px; line-height: 1.9; margin: 0; }
+        .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .value-card { background: var(--light); border-radius: 14px; padding: 28px 20px; text-align: center; border-top: 3px solid var(--teal); transition: transform 0.2s; }
+        .value-card:hover { transform: translateY(-4px); }
+        .value-card i { font-size: 28px; color: var(--teal); margin-bottom: 12px; display: block; }
+        .value-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .value-card p { font-size: 13px; color: #666; line-height: 1.7; margin: 0; }
+        .strengths-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .strength-card { background: linear-gradient(135deg, var(--navy), #1a3d52); border-radius: 14px; padding: 28px 20px; text-align: center; color: #fff; transition: transform 0.2s; }
+        .strength-card:hover { transform: translateY(-4px); }
+        .strength-card i { font-size: 28px; color: var(--gold); margin-bottom: 14px; display: block; }
+        .strength-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+        .strength-card p { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.7; margin: 0; }
+
+        /* PROJECTS */
+        .projects-section { padding: 80px 0; background: var(--light); }
+        .projects-tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 50px; flex-wrap: wrap; }
+        .ptab { padding: 10px 28px; border-radius: 50px; font-size: 14px; font-weight: 700; cursor: pointer; border: 2px solid var(--teal); color: var(--teal); background: #fff; transition: all 0.2s; }
+        .ptab.active, .ptab:hover { background: var(--teal); color: #fff; }
+        .project-panel { display: none; }
+        .project-panel.active { display: block; }
+        .panel-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start; margin-bottom: 40px; background: #fff; border-radius: 16px; padding: 36px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .panel-intro-label { background: linear-gradient(135deg, var(--teal), var(--teal2)); color: #fff; border-radius: 12px; padding: 24px; text-align: center; }
+        .panel-intro-label i { font-size: 36px; color: var(--gold); margin-bottom: 12px; display: block; }
+        .panel-intro-label h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 6px; }
+        .panel-intro-label span { font-size: 12px; opacity: 0.8; }
+        .panel-intro-text h2 { font-size: 1.5rem; font-weight: 800; color: var(--navy); margin-bottom: 12px; }
+        .panel-intro-text p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 16px; }
+        .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .proj-card { background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 3px 15px rgba(0,0,0,0.07); border-right: 4px solid var(--teal); border-left: none; transition: transform 0.2s; }
+        .proj-card:hover { transform: translateY(-4px); }
+        .proj-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .proj-card h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin: 0; }
+        .proj-card .units-badge { background: var(--teal); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; font-family: 'Inter', sans-serif; }
+        .proj-card .location { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 8px; }
+        .proj-card p { font-size: 13px; color: #666; line-height: 1.7; margin: 0; }
+
+        /* BENEFITS */
+        .benefits-section { padding: 80px 0; background: #fff; }
+        .ben-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 50px; }
+        .ben-card { border-radius: 16px; overflow: hidden; box-shadow: 0 5px 25px rgba(0,0,0,0.09); }
+        .ben-head { padding: 26px 30px; display: flex; align-items: center; gap: 14px; }
+        .ben-head.teal { background: linear-gradient(135deg, var(--teal), var(--teal2)); }
+        .ben-head.gold { background: linear-gradient(135deg, #b8860b, #daa520); }
+        .ben-head i { font-size: 26px; color: #fff; opacity: 0.9; }
+        .ben-head h3 { color: #fff; font-size: 1.05rem; font-weight: 700; margin: 0; }
+        .ben-body { padding: 28px 30px; background: var(--light); }
+        .ben-list { list-style: none; padding: 0; margin: 0; }
+        .ben-list li { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-bottom: 1px solid #e8e8e8; font-size: 14px; color: #333; line-height: 1.6; }
+        .ben-list li:last-child { border-bottom: none; }
+        .ben-list li i { color: var(--teal); margin-top: 2px; flex-shrink: 0; }
+        .ben-list.gold-icons li i { color: #b8860b; }
+
+        /* FORM */
+        .form-section { padding: 80px 0; background: var(--navy); }
+        .form-section .sl { color: var(--gold); }
+        .form-section .st { color: #fff; }
+        .form-section .ss { color: rgba(255,255,255,0.6); }
+        .form-card { max-width: 860px; margin: 0 auto; background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.35); }
+        .form-top { background: linear-gradient(135deg, var(--green), var(--green2)); padding: 28px 40px; display: flex; align-items: center; gap: 18px; }
+        .form-top-ico { width: 50px; height: 50px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; flex-shrink: 0; }
+        .form-top h2 { color: #fff; font-size: 1.25rem; font-weight: 700; margin: 0 0 4px; }
+        .form-top p { color: rgba(255,255,255,0.75); font-size: 13px; margin: 0; }
+        .form-body { padding: 40px; }
+        .fg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .fg { display: flex; flex-direction: column; gap: 7px; }
+        .fg.full { grid-column: 1 / -1; }
+        .fg label { font-size: 14px; font-weight: 600; color: #444; }
+        .fg label i { color: var(--teal); margin-left: 6px; margin-right: 0; }
+        .fg input, .fg select { padding: 12px 16px; border: 1.5px solid #e0e0e0; border-radius: 9px; font-size: 14px; font-family: 'Tajawal', sans-serif; color: #333; background: #fafafa; transition: border-color 0.2s; text-align: right; }
+        .fg input:focus, .fg select:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(26,95,122,0.1); background: #fff; }
+        .fg .hint { font-size: 12px; color: #aaa; }
+        .success-box { background: #e8f5e9; border: 1.5px solid #a5d6a7; border-radius: 12px; padding: 18px 24px; display: none; align-items: center; gap: 14px; margin-bottom: 24px; }
+        .success-box i { font-size: 26px; color: var(--green); flex-shrink: 0; }
+        .success-box strong { display: block; font-size: 14px; color: #1b5e20; margin-bottom: 2px; }
+        .success-box span { font-size: 13px; color: #388e3c; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .values-grid, .strengths-grid { grid-template-columns: repeat(2, 1fr); }
+            .proj-grid { grid-template-columns: repeat(2, 1fr); }
+            .panel-intro { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .main-nav { display: none; }
+            .hero-left h1 { font-size: 2rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .vm-grid, .ben-grid { grid-template-columns: 1fr; }
+            .values-grid, .strengths-grid { grid-template-columns: 1fr 1fr; }
+            .proj-grid { grid-template-columns: 1fr; }
+            .fg-grid { grid-template-columns: 1fr; }
+            .fg.full { grid-column: 1; }
+            .form-body { padding: 24px; }
+            .form-top { padding: 24px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .social-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="#">
+                    <img src="https://darwaemaar.com/wp-content/uploads/2024/07/logo.svg" alt="DWE Logo">
+                </a>
+            </div>
+            <div class="demo-badge">
+                <i class="fas fa-flask"></i> Partnership DEMO
+            </div>
+            <div class="header-actions">
+                <div class="lang-switch">
+                    <a href="partner.html">EN</a>
+                    <span>|</span>
+                    <a href="partner-ar.html" class="active">AR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero-wrap">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-left">
+                        <div class="hero-partnership">
+                            <span class="dwe-label">DAR WA EMAAR</span>
+                            <span class="sep">×</span>
+                            <span class="aramco-label ph">OUR PARTNER</span>
+                            <span class="excl">حصري</span>
+                        </div>
+                        <h1>بوابتك نحو العقارات <span>المتميزة</span> — حصرياً لـ<span class="ph">موظفي الشريك</span></h1>
+                        <p>في إطار شراكتنا الاستراتيجية، تُقدّم دار وعمار أسعاراً تفضيلية وأولوية في الحجز وخدمات عقارية متكاملة لموظفي <span class="ph">شريكنا</span> في جميع أنحاء المملكة. تعرّف علينا وسجّل اهتمامك أدناه.</p>
+                        <div class="hero-btns">
+                            <a href="#apply" class="btn btn-primary">سجّل اهتمامك</a>
+                            <a href="#projects" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:#fff;">استكشف المشاريع</a>
+                        </div>
+                    </div>
+                    <div class="hero-right">
+                        <div class="hero-stats">
+                            <div class="stat-box"><div class="num">+20</div><div class="lbl">سنة خبرة</div></div>
+                            <div class="stat-box"><div class="num">+15</div><div class="lbl">مشروع منجز</div></div>
+                            <div class="stat-box"><div class="num">+8,000</div><div class="lbl">وحدة سكنية</div></div>
+                            <div class="stat-box"><div class="num">6</div><div class="lbl">مدن في المملكة</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTICE BAR -->
+        <div class="notice-bar">
+            <i class="fas fa-shield-alt"></i>
+            <strong>وصول حصري:</strong>&nbsp; تم مشاركة هذه الصفحة حصرياً مع موظفي <span class="ph">شريكنا</span> عبر قسم الموارد البشرية. المزايا متاحة للموظفين الموثّقين فقط.
+        </div>
+
+        <!-- ABOUT -->
+        <section class="about-section">
+            <div class="container">
+                <p class="sl">من نحن</p>
+                <h2 class="st">عن دار وعمار</h2>
+                <p class="ss">شركة سعودية رائدة في التطوير العقاري بخبرة تمتد لعقود في بناء مجتمعات سكنية متكاملة عبر المملكة.</p>
+
+                <div class="vm-grid">
+                    <div class="vm-card">
+                        <div class="vm-card-head"><i class="fas fa-eye"></i><h3>رؤيتنا</h3></div>
+                        <div class="vm-card-body"><p>أن نكون المطوّر العقاري الأول في المملكة العربية السعودية، من خلال بناء مجتمعات متكاملة ترفع جودة الحياة وتُلهم نمط العيش المستدام للأجيال القادمة.</p></div>
+                    </div>
+                    <div class="vm-card">
+                        <div class="vm-card-head"><i class="fas fa-bullseye"></i><h3>رسالتنا</h3></div>
+                        <div class="vm-card-body"><p>تطوير حلول عقارية مبتكرة عبر شراكات استراتيجية وتصميم متميز والتزام راسخ بالتميز — لتسليم منازل تلبّي تطلعات الأسر السعودية والمستثمرين على حدٍّ سواء.</p></div>
+                    </div>
+                </div>
+
+                <p class="sl" style="margin-top:20px;">قيمنا الأساسية</p>
+                <h2 class="st" style="margin-bottom:30px;">ما الذي نمثّله</h2>
+                <div class="values-grid">
+                    <div class="value-card"><i class="fas fa-medal"></i><h4>الجودة</h4><p>معايير لا تهاون فيها في كل وحدة وكل تشطيب وكل مجتمع نبنيه.</p></div>
+                    <div class="value-card"><i class="fas fa-lightbulb"></i><h4>الابتكار</h4><p>تصاميم وأساليب بناء متطورة تضع معايير جديدة في السوق العقاري.</p></div>
+                    <div class="value-card"><i class="fas fa-leaf"></i><h4>الاستدامة</h4><p>بناء مجتمعات تحمل المسؤولية البيئية والاجتماعية في صميمها.</p></div>
+                    <div class="value-card"><i class="fas fa-handshake"></i><h4>الثقة</h4><p>شراكات شفافة وعلاقات صادقة مع كل عميل وشريك.</p></div>
+                </div>
+
+                <p class="sl" style="margin-top:50px;">نقاط قوتنا</p>
+                <h2 class="st" style="margin-bottom:30px;">لماذا تختار دار وعمار</h2>
+                <div class="strengths-grid">
+                    <div class="strength-card"><i class="fas fa-hard-hat"></i><h4>خبرة عقارية متعمّقة</h4><p>أكثر من عقدين من الخبرة الموثّقة في تطوير المشاريع السكنية بالمملكة.</p></div>
+                    <div class="strength-card"><i class="fas fa-city"></i><h4>إدارة مشاريع كبرى</h4><p>تسليم مجتمعات واسعة النطاق تضم آلاف الوحدات السكنية في مواعيدها.</p></div>
+                    <div class="strength-card"><i class="fas fa-network-wired"></i><h4>شراكات استراتيجية</h4><p>تعاون مع كبرى المؤسسات والشركات لتقديم حلول سكنية مخصصة.</p></div>
+                    <div class="strength-card"><i class="fas fa-chart-line"></i><h4>حلول استثمارية مبتكرة</h4><p>نماذج استثمار عقاري ذكية تحقق قيمة حقيقية للأسر والمستثمرين.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="projects-section" id="projects">
+            <div class="container">
+                <p class="sl">محفظتنا العقارية</p>
+                <h2 class="st">استكشف مشاريعنا</h2>
+                <p class="ss">ثلاث مجموعات سكنية متميزة — كلٌّ منها مصمَّم لنمط حياة فريد في مختلف أنحاء المملكة.</p>
+
+                <div class="projects-tabs">
+                    <div class="ptab active" onclick="switchTab('saraya', this)">مجموعة سرايا</div>
+                    <div class="ptab" onclick="switchTab('communities', this)">كوميونيتيز</div>
+                    <div class="ptab" onclick="switchTab('tala', this)">مجموعة تالا</div>
+                </div>
+
+                <!-- SARAYA -->
+                <div class="project-panel active" id="panel-saraya">
+                    <div class="panel-intro">
+                        <div class="panel-intro-label"><i class="fas fa-crown"></i><h3>مجموعة سرايا</h3><span>9 مشاريع · 6 مدن</span></div>
+                        <div class="panel-intro-text">
+                            <h2>مجتمعات سكنية راقية وفاخرة</h2>
+                            <p>تمثّل مجموعة سرايا المحفظة الرائدة لدار وعمار في التطوير السكني، وتمتد عبر الرياض والخبر والدمام وجدة والمدينة المنورة والقطيف. كل مشروع سرايا هو تحفة معمارية عصرية تجمع بين الجودة والراحة والموقع الاستراتيجي.</p>
+                            <a href="https://darwaemaar.com/communities/" target="_blank" class="btn btn-outline" style="font-size:13px; padding:8px 20px;">استعرض المحفظة الكاملة <i class="fas fa-external-link-alt" style="font-size:11px; margin-right:6px;"></i></a>
+                        </div>
+                    </div>
+                    <div class="proj-grid">
+                        <div class="proj-card"><div class="proj-card-top"><h4>سرايا النرجس</h4><span class="units-badge">1,294</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> الرياض</div><p>عند تقاطع طريق عثمان بن عفان وطريق الملك سلمان. تصاميم عصرية وجودة عالية ومرافق خدمية متكاملة.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>سرايا الربوة</h4><span class="units-badge">1,155</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> شرق الرياض</div><p>8 نماذج سكنية متميزة تجمع الجودة والراحة، بالقرب من مستشفى الحرس الوطني وكلية الطب.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>سرايا الجوان</h4><span class="units-badge">936</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> شمال الرياض</div><p>نموذجان معماريان راقيان في بيئة فاخرة، يوفران أسلوب حياة رفيعاً في أحد أكثر أحياء الرياض رقياً.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>سرايا الفرسان 2</h4><span class="units-badge">718</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> شمال شرق الرياض</div><p>ضمن مشروع تطوير بمساحة 35 مليون م²، على بعد 14 كم من المطار ومتصل بشبكة المترو.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>سرايا البدر</h4><span class="units-badge">634</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> المدينة المنورة</div><p>موقع استراتيجي على بُعد أقل من 15 دقيقة من المسجد النبوي الشريف، متصل بشبكات النقل الرئيسية.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>سرايا الشرق</h4><span class="units-badge">616</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> الدمام</div><p>مشروع واجهة بحرية بارز في الدمام، يجمع التصميم الحديث والتخطيط الجيد والمرافق المتكاملة.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>سرايا البحر</h4><span class="units-badge">425</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> القطيف</div><p>بيئة معيشية متكاملة على ساحل الخليج العربي، قريبة من شبكات الطرق الرئيسية.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>سرايا البحيرات</h4><span class="units-badge">358</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> جدة</div><p>معلم سكني جديد يمزج الراحة والفخامة مع إرث جدة العريق في حي السدايم.</p></div>
+                        <div class="proj-card"><div class="proj-card-top"><h4>سرايا العليا</h4><span class="units-badge">324</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> الخبر</div><p>معلم سكني متكامل يلبي أنماط الحياة المتنوعة بجودة بناء دقيقة في قلب الخبر.</p></div>
+                    </div>
+                </div>
+
+                <!-- COMMUNITIES -->
+                <div class="project-panel" id="panel-communities">
+                    <div class="panel-intro">
+                        <div class="panel-intro-label"><i class="fas fa-people-roof"></i><h3>كوميونيتيز</h3><span>مشروعان · الرياض</span></div>
+                        <div class="panel-intro-text">
+                            <h2>مفهوم جديد للحياة في الأحياء الحديثة</h2>
+                            <p>تُعيد مشاريع كوميونيتيز من دار وعمار تعريف معنى العيش في حيٍّ سكني. تصاميم مفتوحة وحدائق خضراء تخلق بيئة صحية للأسر، ومرافق تجارية متكاملة وخيارات سكنية متنوعة تضمن توافر كل ما تحتاجه على مقربة منك.</p>
+                            <a href="https://darwaemaar.com/ar-communities/" target="_blank" class="btn btn-outline" style="font-size:13px; padding:8px 20px;">اعرف أكثر <i class="fas fa-external-link-alt" style="font-size:11px; margin-right:6px;"></i></a>
+                        </div>
+                    </div>
+                    <div class="proj-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="proj-card" style="border-right-color: var(--gold);"><div class="proj-card-top"><h4>النرجس كوميونيتيز</h4><span class="units-badge">750</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> الرياض</div><p>منازل مصمَّمة بعناية تجمع الجودة والراحة والعملية. مواقف مفتوحة وتصاميم ذكية ومساحات خضراء سخية. <strong style="color:var(--green);">متاح الآن.</strong></p></div>
+                        <div class="proj-card" style="border-right-color: var(--gold);"><div class="proj-card-top"><h4>الفرسان كوميونيتيز</h4><span class="units-badge">1,718</span></div><div class="location"><i class="fas fa-map-marker-alt"></i> الرياض</div><p>أسلوب حياة فاخر يمزج تصاميم راقية وحدائق محسّنة ومرافق حديثة تشمل ملاعب البادل. <strong style="color:var(--gold);">قريباً.</strong></p></div>
+                    </div>
+                    <div style="background:#fff; border-radius:14px; padding:28px 30px; margin-top:20px; box-shadow:0 3px 15px rgba(0,0,0,0.06);">
+                        <h4 style="color:var(--navy); margin-bottom:16px; font-size:15px;"><i class="fas fa-star" style="color:var(--gold); margin-left:8px;"></i>مميزات المجتمع</h4>
+                        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+                            <div style="text-align:center; padding:16px; background:var(--light); border-radius:10px;"><i class="fas fa-tree" style="color:var(--teal); font-size:22px; margin-bottom:8px; display:block;"></i><div style="font-size:13px; font-weight:600; color:var(--navy);">مساحات خضراء واسعة</div></div>
+                            <div style="text-align:center; padding:16px; background:var(--light); border-radius:10px;"><i class="fas fa-store" style="color:var(--teal); font-size:22px; margin-bottom:8px; display:block;"></i><div style="font-size:13px; font-weight:600; color:var(--navy);">مرافق تجارية متكاملة</div></div>
+                            <div style="text-align:center; padding:16px; background:var(--light); border-radius:10px;"><i class="fas fa-home" style="color:var(--teal); font-size:22px; margin-bottom:8px; display:block;"></i><div style="font-size:13px; font-weight:600; color:var(--navy);">وحدات سكنية متنوعة</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TALA -->
+                <div class="project-panel" id="panel-tala">
+                    <div class="panel-intro">
+                        <div class="panel-intro-label"><i class="fas fa-gem"></i><h3>مجموعة تالا</h3><span>مشروعان · الرياض والخبر</span></div>
+                        <div class="panel-intro-text">
+                            <h2>تصميم عصري يلتقي بالرقي في المعيشة</h2>
+                            <p>تالا تتجاوز فكرة المأوى — إنها المكان الذي تتلاقى فيه العواطف وروابط الأسرة وتطلعات نمط الحياة. ثلاثة محاور تُعرّف تالا: <strong>مساحات متنوعة</strong>، <strong>تصاميم جذابة</strong>، <strong>جودة عالية</strong>.</p>
+                            <a href="https://darwaemaar.com/tala/" target="_blank" class="btn btn-outline" style="font-size:13px; padding:8px 20px;">اكتشف تالا <i class="fas fa-external-link-alt" style="font-size:11px; margin-right:6px;"></i></a>
+                        </div>
+                    </div>
+                    <div class="proj-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="proj-card" style="border-right-color: #9c5700;"><div class="proj-card-top"><h4>تالا الخزام</h4><span class="units-badge" style="background:#9c5700;">1,298</span></div><div class="location" style="color:#9c5700;"><i class="fas fa-map-marker-alt"></i> شمال الرياض</div><p>ضمن مشروع NHC الكبير الذي يمتد على أكثر من 30 مليون م² بالقرب من مطار الملك خالد الدولي، يضم أكثر من 50,000 وحدة سكنية.</p></div>
+                        <div class="proj-card" style="border-right-color: #9c5700;"><div class="proj-card-top"><h4>تالا السيف</h4><span class="units-badge" style="background:#9c5700;">135</span></div><div class="location" style="color:#9c5700;"><i class="fas fa-map-marker-alt"></i> الخبر</div><p>مجموعة راقية بجدران زجاجية بالارتفاع الكامل وأرضيات متواصلة، مع إطلالات بانورامية من جميع الزوايا.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFITS -->
+        <section class="benefits-section">
+            <div class="container">
+                <p class="sl">مزايا الشراكة</p>
+                <h2 class="st">ما تقدمه الشراكة</h2>
+                <p class="ss">مزايا حصرية لأرامكو السعودية كمؤسسة ولموظفيها كأفراد.</p>
+                <div class="ben-grid">
+                    <div class="ben-card">
+                        <div class="ben-head teal"><i class="fas fa-city"></i><h3>مزايا الشراكة — لـ<span class="ph">شريكنا</span></h3></div>
+                        <div class="ben-body">
+                            <ul class="ben-list">
+                                <li><i class="fas fa-check-circle"></i> اتفاقية تعاون مؤسسية رسمية ومعتمدة</li>
+                                <li><i class="fas fa-check-circle"></i> خصومات خاصة ومزايا حصرية لجميع الموظفين</li>
+                                <li><i class="fas fa-check-circle"></i> حلول عقارية مرنة مصمّمة لاحتياجات القوى العاملة</li>
+                                <li><i class="fas fa-check-circle"></i> نقطة تواصل مباشرة مع فريق متخصص من دار وعمار</li>
+                                <li><i class="fas fa-check-circle"></i> متابعة مستمرة ودعم ما بعد البيع</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ben-card">
+                        <div class="ben-head gold"><i class="fas fa-users"></i><h3>مزايا الموظفين — لك أنت</h3></div>
+                        <div class="ben-body">
+                            <ul class="ben-list gold-icons">
+                                <li><i class="fas fa-star"></i> أسعار تفضيلية وخطط دفع مميزة</li>
+                                <li><i class="fas fa-star"></i> أولوية في الإطلاقات الجديدة قبل العموم</li>
+                                <li><i class="fas fa-star"></i> مستشار عقاري شخصي مخصص لك</li>
+                                <li><i class="fas fa-star"></i> استشارة عقارية متخصصة مجانية</li>
+                                <li><i class="fas fa-star"></i> إجراءات شراء مبسّطة وعروض حصرية</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORM -->
+        <section class="form-section" id="apply">
+            <div class="container">
+                <p class="sl">ابدأ الآن</p>
+                <h2 class="st">سجّل اهتمامك</h2>
+                <p class="ss">أدخل بياناتك وسيتواصل معك مستشار دار وعمار المخصص خلال 24 ساعة.</p>
+                <div class="form-card">
+                    <div class="form-top">
+                        <div class="form-top-ico"><i class="fas fa-id-badge"></i></div>
+                        <div>
+                            <h2>تسجيل <span class="ph">موظفي الشريك</span></h2>
+                            <p>حصري لموظفي <span class="ph">شريكنا</span> — جميع المعلومات محفوظة بسرية تامة.</p>
+                        </div>
+                    </div>
+                    <div class="form-body">
+                        <div class="success-box" id="success-box">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>تم إرسال طلبك بنجاح!</strong>
+                                <span>شكراً لك! سيتواصل معك مستشار دار وعمار المخصص خلال 24 ساعة.</span>
+                            </div>
+                        </div>
+                        <!--
+                            إعداد Formspree:
+                            1. اذهب إلى https://formspree.io وأنشئ حساباً مجانياً
+                            2. أنشئ نموذجاً جديداً وانسخ معرّف النموذج
+                            3. استبدل "YOUR_FORM_ID" أدناه بمعرّف النموذج الخاص بك
+                        -->
+                        <form id="aramco-form-ar" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                            <div class="fg-grid">
+                                <div class="fg">
+                                    <label><i class="fas fa-user"></i> الاسم الكامل</label>
+                                    <input type="text" name="FullName" placeholder="اسمك الكامل" required>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-id-card"></i> رقم الموظف</label>
+                                    <input type="text" name="EmployeeId" placeholder="مثال: 12345678" required>
+                                    <span class="hint">رقم الهوية الوظيفية / البطاقة الوظيفية</span>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-briefcase"></i> المسمى الوظيفي</label>
+                                    <input type="text" name="JobTitle" placeholder="مثال: مهندس أول" required>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-envelope"></i> البريد الإلكتروني الوظيفي</label>
+                                    <input type="email" name="Email" placeholder="name@company.com" required>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-phone"></i> رقم الجوال الشخصي</label>
+                                    <input type="tel" name="PhoneNumber" placeholder="+966 5X XXX XXXX" required>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-building"></i> المشروع المفضّل</label>
+                                    <select name="RealEstateInterest" required>
+                                        <option value="">— اختر المجموعة —</option>
+                                        <optgroup label="مجموعة سرايا">
+                                            <option value="سرايا النرجس">سرايا النرجس (الرياض)</option>
+                                            <option value="سرايا الربوة">سرايا الربوة (الرياض)</option>
+                                            <option value="سرايا الشرق">سرايا الشرق (الدمام)</option>
+                                            <option value="سرايا العليا">سرايا العليا (الخبر)</option>
+                                            <option value="مشروع سرايا آخر">مشروع سرايا آخر</option>
+                                        </optgroup>
+                                        <optgroup label="كوميونيتيز">
+                                            <option value="النرجس كوميونيتيز">النرجس كوميونيتيز (الرياض)</option>
+                                            <option value="الفرسان كوميونيتيز">الفرسان كوميونيتيز (الرياض)</option>
+                                        </optgroup>
+                                        <optgroup label="مجموعة تالا">
+                                            <option value="تالا الخزام">تالا الخزام (الرياض)</option>
+                                            <option value="تالا السيف">تالا السيف (الخبر)</option>
+                                        </optgroup>
+                                        <option value="استفسار عام">استفسار عام / لم أحدد بعد</option>
+                                    </select>
+                                </div>
+                                <div class="fg full">
+                                    <label><i class="fas fa-map-marker-alt"></i> الموقع المفضّل</label>
+                                    <select name="PreferredLocation" required>
+                                        <option value="">— اختر المدينة المفضلة —</option>
+                                        <option value="الخبر">الخبر</option>
+                                        <option value="الظهران">الظهران</option>
+                                        <option value="الدمام">الدمام</option>
+                                        <option value="الرياض">الرياض</option>
+                                        <option value="جدة">جدة</option>
+                                        <option value="المدينة المنورة">المدينة المنورة</option>
+                                        <option value="أي موقع">لا تفضيل محدد</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div style="margin-top:28px;">
+                                <button type="submit" class="btn btn-primary btn-block" style="font-size:17px; padding:15px; background:linear-gradient(135deg, var(--green), var(--teal)); border:none; font-weight:700;">
+                                    <i class="fas fa-paper-plane"></i>&nbsp; إرسال طلب التسجيل
+                                </button>
+                                <p style="text-align:center; font-size:13px; color:#aaa; margin-top:14px;">
+                                    <i class="fas fa-lock"></i>&nbsp; معلوماتك آمنة وتُستخدم حصرياً لمعالجة مزاياك العقارية.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://darwaemaar.com/wp-content/uploads/2024/07/logo.svg" alt="DWE Logo" class="footer-logo">
+                    <p>نبني مجتمعات تُلهم حياة أفضل.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>أحدث المشاريع</h4>
+                    <ul>
+                        <li><a href="#">النرجس هايتس</a></li>
+                        <li><a href="#">مشاريع أخرى</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>عن دار وعمار</h4>
+                    <ul>
+                        <li><a href="#">قصتنا</a></li>
+                        <li><a href="#">فريقنا</a></li>
+                        <li><a href="#">الوظائف</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>مواقع المكاتب</h4>
+                    <p><strong>مكتب الخبر</strong><br>طريق الملك فهد، الخبر</p>
+                    <p><strong>مكتب الرياض</strong><br>شارع العليا، الرياض</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 دار وعمار. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cursor-follower"></div>
+
+    <script>
+        // Tab switcher
+        function switchTab(name, el) {
+            document.querySelectorAll('.project-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+            document.getElementById('panel-' + name).classList.add('active');
+            el.classList.add('active');
+        }
+
+        // Cursor follower
+        (function () {
+            var follower = document.getElementById('cursor-follower');
+            document.addEventListener('mousemove', function (e) {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+                follower.style.opacity = '1';
+            });
+            document.addEventListener('mouseleave', function () {
+                follower.style.opacity = '0';
+            });
+        })();
+
+        // Formspree AJAX submission
+        const form = document.getElementById('aramco-form-ar');
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    const successBox = document.getElementById('success-box');
+                    successBox.style.display = 'flex';
+                    form.style.display = 'none';
+                    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    alert('حدث خطأ. يرجى المحاولة مرة أخرى.');
+                }
+            } catch (err) {
+                alert('خطأ في الاتصال. يرجى المحاولة مرة أخرى.');
+            }
+        });
+    </script>
+
+</body>
+</html>
