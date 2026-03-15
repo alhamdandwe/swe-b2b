@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Partnership Program – Dar Wa Emaar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.21/css/intlTelInput.css">
+    <style>
+        @property --border-color { syntax: '<color>'; inherits: true; initial-value: #ec661b; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; background-color: #fff; padding-top: 60px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+
+        /* Header */
+        .header { position: fixed; top: 0; left: 0; right: 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 8px 0; }
+        .header-content { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+        .logo img { height: 36px; flex-shrink: 0; }
+        .main-nav { display: flex; }
+        .main-nav ul { display: flex; gap: 18px; }
+        .main-nav a { font-size: 13px; font-weight: 500; color: #333; white-space: nowrap; transition: color 0.3s; }
+        .main-nav a:hover { color: #1a5f7a; }
+        .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: auto; }
+        .lang-switch { display: flex; gap: 5px; font-size: 14px; }
+        .lang-switch a { color: #333; }
+        .lang-switch a.active { font-weight: 600; color: #1a5f7a; }
+        .demo-badge { background: linear-gradient(135deg, #f5a623, #e8960f); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 5px; font-weight: 500; cursor: pointer; transition: all 0.3s; border: none; font-size: 16px; font-family: 'Inter', sans-serif; }
+        .btn-primary { background: #1a5f7a; color: #fff; }
+        .btn-primary:hover { background: #134a5f; }
+        .btn-outline { border: 2px solid #1a5f7a; color: #1a5f7a; background: transparent; }
+        .btn-outline:hover { background: #1a5f7a; color: #fff; }
+        .btn-block { width: 100%; justify-content: center; }
+
+        /* CSS Variables */
+        :root {
+            --teal: #1a5f7a;
+            --teal2: #2d8a9e;
+            --gold: #f5a623;
+            --navy: #1a2a3a;
+            --green: #00843d;
+            --green2: #005c2b;
+            --light: #f8f9fa;
+        }
+
+        /* Section helpers */
+        .sl { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+        .st { text-align: center; font-size: 1.9rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+        .ss { text-align: center; color: #777; font-size: 15px; margin-bottom: 50px; max-width: 560px; margin-left: auto; margin-right: auto; }
+
+        /* Hero */
+        .hero-wrap { background: url('Untitled-23.png') center/cover no-repeat; padding: 90px 0 70px; position: relative; overflow: hidden; }
+        .hero-wrap::before { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.61); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+        .hero-partnership { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); padding: 8px 18px; border-radius: 50px; margin-bottom: 24px; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+        .hero-partnership .dwe-label { color: var(--gold); }
+        .hero-partnership .sep { color: rgba(255,255,255,0.3); }
+        .hero-partnership .partner-label { color: #6dde9e; }
+        .hero-partnership .excl { background: var(--green); color: #fff; padding: 2px 10px; border-radius: 4px; font-size: 10px; }
+        .hero-left h1 { font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 18px; }
+        .hero-left h1 span { color: var(--gold); }
+        .hero-left p { color: rgba(255,255,255,0.78); font-size: 1rem; line-height: 1.8; margin-bottom: 30px; }
+        .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .stat-box { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 22px 20px; text-align: center; backdrop-filter: blur(6px); transition: background 0.2s; }
+        .stat-box:hover { background: rgba(255,255,255,0.12); }
+        .stat-box .num { font-size: 2.2rem; font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+        .stat-box .lbl { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 500; }
+
+        /* About / Video section — copied from partner.html */
+        .about-section { padding: 80px 0; background: #fff; }
+        .vm-video-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; margin-bottom: 50px; }
+        .vm-video-layout .vm-cards-col { display: flex; flex-direction: column; gap: 24px; }
+        .about-video-wrap { position: relative; padding: 8px; }
+        .about-video-wrap { --border-color: #ec661b; transition: --border-color 0.6s; }
+        .about-video-wrap::before, .about-video-wrap::after { content: ''; position: absolute; width: 3px; height: 85%; transition: background 0.6s; }
+        .about-video-wrap::before { left: 0; top: 0; background: linear-gradient(to bottom, var(--border-color) 70%, transparent); }
+        .about-video-wrap::after { right: 0; bottom: 0; background: linear-gradient(to top, var(--border-color) 70%, transparent); }
+        .about-video-inner { position: relative; }
+        .about-video-inner::before, .about-video-inner::after { content: ''; position: absolute; height: 3px; background: var(--border-color); transition: background 0.6s; }
+        .about-video-inner::before { top: -8px; left: -8px; width: calc(100% + 16px); }
+        .about-video-inner::after { bottom: -8px; left: -8px; width: calc(100% + 16px); }
+        .about-video-wrap video { width: 100%; display: block; border-radius: 4px; }
+        .video-white-mask { position: absolute; top: 0; left: 0; right: 0; height: 20px; background: linear-gradient(to bottom, #fff, transparent); opacity: 0; pointer-events: none; z-index: 1; }
+
+        /* Latest Projects */
+        .projects-section { padding: 80px 0; background: var(--light); }
+        .proj-grid { gap: 20px; }
+        .proj-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 3px 15px rgba(0,0,0,0.07); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+        .proj-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.12); }
+        .proj-card-img { height: 200px; background-size: cover; background-position: center; position: relative; }
+        .proj-card-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%); }
+        .proj-card-img .proj-badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; z-index: 1; }
+        .proj-card-img .proj-units { position: absolute; bottom: 12px; left: 12px; color: #fff; font-size: 12px; font-weight: 700; z-index: 1; }
+        .proj-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+        .proj-card-body h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+        .proj-card-body .location { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+        .proj-card-body p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 0; flex: 1; }
+        .proj-card-footer { padding: 0; margin-top: auto; }
+        .proj-card-footer .btn { font-size: 13px; padding: 12px 0; width: 100%; justify-content: center; border-radius: 0 0 14px 14px; border: none; box-shadow: 0 -2px 6px rgba(0,0,0,0.08); }
+
+        /* Exclusive Benefits */
+        .benefits-section { padding: 80px 0; background: #fff; }
+        .ben-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 50px; }
+        .ben-item { background: var(--light); border-radius: 16px; padding: 32px 20px; text-align: center; border-top: 3px solid var(--teal); transition: transform 0.2s, box-shadow 0.2s; }
+        .ben-item:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .ben-item i { font-size: 32px; color: var(--teal); margin-bottom: 16px; display: block; }
+        .ben-item h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .ben-item p { font-size: 13px; color: #666; line-height: 1.6; margin: 0; }
+
+        /* Homeownership Journey */
+        .parallax-img { height: 500px; background-attachment: fixed; background-size: cover; background-position: center; position: relative; }
+        .parallax-img + .parallax-img { margin-top: 0; }
+        .parallax-footer { height: 500px; background-attachment: fixed; background-size: cover; background-position: center; position: relative; }
+        .parallax-footer::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+        .img-showcase.in-view .img-showcase-inner { opacity: 1; }
+        .journey-section { padding: 80px 0; background: var(--light); }
+        .journey-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 50px; position: relative; }
+        .journey-grid::before { content: ''; position: absolute; top: 86px; left: 10%; right: 10%; height: 3px; background: linear-gradient(to right, var(--teal), var(--gold), var(--green)); z-index: 0; }
+        .journey-step { text-align: center; position: relative; z-index: 1; padding: 0 10px; }
+        .journey-step::after { content: ''; position: absolute; top: 72px; left: 50%; width: 2px; height: 14px; background: var(--gold); transform: translateX(-50%); }
+        .journey-num { width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: 800; background: transparent; border: 2px solid transparent; transition: border-color 0.3s; }
+        .journey-step:hover .journey-num { border-color: var(--gold); }
+        .journey-step i { font-size: 20px; display: block; margin-bottom: 4px; color: var(--gold); }
+        .journey-step h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .journey-step p { font-size: 12px; color: #777; line-height: 1.5; }
+
+        /* Consultation Form */
+        .form-section { padding: 20px 0; background: url('formbg.jpg') center/cover no-repeat; position: relative; }
+        .form-section::before { content: ''; position: absolute; inset: 0; background: rgba(26, 42, 58, 0.45); }
+        .form-section .container { position: relative; z-index: 1; }
+        .form-section .sl { color: var(--gold); }
+        .form-section .st { color: #fff; }
+        .form-section .ss { color: rgba(255,255,255,0.6); }
+        .form-card { max-width: 520px; margin: 0 auto 0 0; background: #fff; border-radius: 5px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.35); }
+        .form-top { background: #fff; padding: 14px 24px; display: flex; align-items: center; gap: 18px; }
+        .form-top-ico { width: 50px; height: 50px; background: rgba(236,102,27,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #ec661b; flex-shrink: 0; }
+        .form-top h2 { color: var(--navy); font-size: 1.25rem; font-weight: 700; margin: 0 0 4px; }
+        .form-top p { color: #777; font-size: 13px; margin: 0; }
+        .form-body { padding: 18px 24px; }
+        .fg-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .fg { display: flex; flex-direction: column; gap: 7px; }
+        .fg.full { grid-column: 1 / -1; }
+        .fg label { font-size: 13px; font-weight: 600; color: #444; }
+        .fg label i { color: var(--teal); margin-right: 5px; }
+        .fg input, .fg select { padding: 12px 16px; border: 1.5px solid #e0e0e0; border-radius: 9px; font-size: 14px; font-family: 'Inter', sans-serif; color: #333; background: #fafafa; transition: border-color 0.2s, box-shadow 0.2s; }
+        .fg input:focus, .fg select:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(26,95,122,0.1); background: #fff; }
+        .fg .hint { font-size: 11px; color: #aaa; }
+        .success-box { background: #e8f5e9; border: 1.5px solid #a5d6a7; border-radius: 12px; padding: 18px 24px; display: none; align-items: center; gap: 14px; margin-bottom: 24px; }
+        .success-box i { font-size: 26px; color: var(--green); flex-shrink: 0; }
+        .success-box strong { display: block; font-size: 14px; color: #1b5e20; margin-bottom: 2px; }
+        .success-box span { font-size: 13px; color: #388e3c; }
+
+        /* Footer */
+        .footer { background: #1a2a3a; color: #fff; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+        .footer-logo { height: 50px; margin-bottom: 15px; }
+        .footer-col p { color: #aaa; font-size: 14px; line-height: 1.8; }
+        .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; color: #fff; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul a { color: #aaa; font-size: 14px; transition: color 0.3s; }
+        .footer-col ul a:hover { color: #fff; }
+        .social-links { display: flex; gap: 10px; margin-top: 20px; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; transition: background 0.3s; }
+        .social-links a:hover { background: #1a5f7a; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; color: #666; font-size: 14px; }
+
+        /* Salesforce info */
+        .sf-section { padding: 60px 0; background: #fff; }
+        .sf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
+        .sf-info { background: var(--light); border-radius: 16px; padding: 36px; border-left: 4px solid var(--teal); }
+        .sf-info h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+        .sf-info p { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 16px; }
+        .sf-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .sf-tag { background: #fff; border: 1.5px solid var(--teal); color: var(--teal); padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; }
+        .sf-flow { display: flex; flex-direction: column; gap: 12px; }
+        .sf-flow-step { display: flex; align-items: flex-start; gap: 14px; background: var(--light); border-radius: 12px; padding: 16px 20px; }
+        .sf-flow-num { width: 32px; height: 32px; background: linear-gradient(135deg, var(--teal), var(--teal2)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+        .sf-flow-step p { font-size: 13px; color: #555; margin: 0; line-height: 1.5; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .vm-video-layout { grid-template-columns: 1fr; }
+            .ben-grid { grid-template-columns: repeat(3, 1fr); }
+            .journey-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+            .journey-grid::before { display: none; }
+            .journey-step::after { display: none; }
+            .sf-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .journey-num { border-color: var(--gold); }
+            .main-nav { display: none; }
+            .hero-left h1 { font-size: 2rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .ben-grid { grid-template-columns: 1fr 1fr; }
+            .journey-grid { grid-template-columns: 1fr 1fr; }
+            .fg-grid { grid-template-columns: 1fr; }
+            .fg.full { grid-column: 1; }
+            .form-body { padding: 24px; }
+            .form-top { padding: 24px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .social-links { justify-content: center; }
+        }
+        @media (max-width: 480px) {
+            .ben-grid { grid-template-columns: 1fr; }
+            .journey-grid { grid-template-columns: 1fr; }
+        }
+        /* ===== Info Card Base ===== */
+        .info-card { transition: all 0.4s ease; }
+        .info-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; transition: all 0.4s; }
+        .info-card p { font-size: 14px; color: #555; line-height: 1.8; margin: 0; transition: all 0.4s; }
+        .info-card .card-icon { margin-bottom: 14px; transition: all 0.4s; }
+        .info-card .card-icon i { font-size: 24px; transition: all 0.4s; }
+
+        /* =============================================
+           Design 1 — Two Separate Boxes (original)
+           ============================================= */
+        .vm-layout-1 { display: flex !important; flex-direction: column; align-items: center; gap: 30px; }
+        .vm-layout-1 .vm-cards-col { flex-direction: row !important; gap: 24px; width: 100%; }
+        .vm-layout-1 .about-video-wrap { width: 70%; }
+        .design-1 .info-card { background: var(--light); border-radius: 16px; padding: 28px; border-left: 4px solid var(--teal); flex: 1; }
+        .design-1 .info-card-2 { border-left-color: var(--gold); }
+        .design-1 .info-card-1 .card-icon i { color: var(--teal); }
+        .design-1 .info-card-2 .card-icon i { color: var(--gold); }
+
+        /* =============================================
+           Design 2 — Naked Floating Text (no box at all)
+           ============================================= */
+        .vm-layout-2 { display: flex !important; flex-direction: column-reverse; align-items: center; gap: 30px; }
+        .vm-layout-2 .vm-cards-col { flex-direction: row !important; gap: 40px; width: 100%; }
+        .vm-layout-2 .about-video-wrap { width: 70%; }
+        .design-2 .info-card { background: none; border: none; border-radius: 0; padding: 0; box-shadow: none; flex: 1; }
+        .design-2 .info-card .card-icon { display: none; }
+        .design-2 .info-card h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+        .design-2 .info-card p { font-size: 14px; color: #666; line-height: 1.9; }
+
+        /* =============================================
+           Design 3 — One Unified Card with Divider
+           ============================================= */
+        .vm-layout-3 { display: grid !important; grid-template-columns: 1fr; gap: 0; position: relative; }
+        .vm-layout-3 .about-video-wrap { width: 100%; grid-row: 1; grid-column: 1; border-radius: 20px; overflow: hidden; min-height: 400px; }
+        .vm-layout-3 .about-video-wrap video { width: 100%; height: 100%; object-fit: cover; }
+        .vm-layout-3 .about-video-wrap::before, .vm-layout-3 .about-video-wrap::after { display: none; }
+        .vm-layout-3 .about-video-inner::before, .vm-layout-3 .about-video-inner::after { display: none; }
+        .vm-layout-3 .about-video-wrap .about-video-inner { height: 100%; }
+        .vm-layout-3 .vm-cards-col { grid-row: 1; grid-column: 1; z-index: 2; flex-direction: row !important; gap: 20px; align-self: end; padding: 30px; transition: transform 4s ease; }
+        .vm-layout-3 .cards-dark { transform: translateY(40%); }
+        .design-3 .info-card { background: rgba(255,255,255,0.15) !important; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.25); border-radius: 16px; padding: 24px 28px; flex: 1; box-shadow: 0 8px 32px rgba(0,0,0,0.15); transition: background 4s ease, border-color 4s ease, box-shadow 4s ease; }
+        .design-3 .info-card h3 { color: #fff !important; font-size: 1.1rem; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+        .design-3 .info-card p { color: rgba(255,255,255,0.9) !important; font-size: 13px; line-height: 1.9; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+        .design-3.cards-dark .info-card { background: rgba(20,30,40,0.65) !important; border-color: rgba(255,255,255,0.15); box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
+        .design-3 .info-card .card-icon i { font-size: 28px; }
+        .design-3 .info-card-1 .card-icon i { color: #fff; text-shadow: 0 0 12px rgba(26,95,122,0.8); }
+        .design-3 .info-card-2 .card-icon i { color: #fff; text-shadow: 0 0 12px rgba(245,166,35,0.8); }
+
+        /* =============================================
+           Design 4 — Vertical Timeline Style
+           ============================================= */
+        .design-4.vm-cards-col { gap: 0 !important; padding-left: 30px; position: relative; }
+        .design-4.vm-cards-col::before { content: ''; position: absolute; left: 8px; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(to bottom, var(--teal), var(--gold)); border-radius: 2px; }
+        .design-4 .info-card { background: none; border: none; padding: 0 0 30px 0; position: relative; }
+        .design-4 .info-card-2 { padding-bottom: 0; }
+        .design-4 .info-card::before { content: ''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%; border: 2.5px solid #fff; box-shadow: 0 0 0 2px var(--teal); }
+        .design-4 .info-card-1::before { background: var(--teal); }
+        .design-4 .info-card-2::before { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+        .design-4 .info-card .card-icon { display: none; }
+        .design-4 .info-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .design-4 .info-card p { font-size: 13.5px; color: #666; }
+
+        /* =============================================
+           Design 5 — Magazine / Quote Pull Style
+           ============================================= */
+        .design-5 .info-card { background: none; border: none; padding: 20px 0; position: relative; padding-left: 24px; }
+        .design-5 .info-card::before { content: ''; position: absolute; left: 0; top: 20px; bottom: 0; width: 3px; border-radius: 3px; }
+        .design-5 .info-card-1::before { background: var(--teal); }
+        .design-5 .info-card-2::before { background: var(--gold); }
+        .design-5 .info-card .card-icon { display: none; }
+        .design-5 .info-card h3 { font-size: 0.85rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+        .design-5 .info-card-1 h3 { color: var(--teal); }
+        .design-5 .info-card-2 h3 { color: var(--gold); }
+        .design-5 .info-card p { font-size: 15px; color: #444; line-height: 1.9; font-weight: 400; }
+
+        /* Switcher buttons */
+        .ds-btn { background: #f0f2f5; border: 1.5px solid #e0e0e0; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; color: #555; transition: all 0.2s; font-family: 'Inter', sans-serif; white-space: nowrap; }
+        .ds-btn:hover { background: #e8ecf0; border-color: #ccc; }
+        .ds-btn.ds-active { background: var(--teal); color: #fff; border-color: var(--teal); }
+
+        /* =============================================
+           Project Layout 1 — Grid (original 4-col)
+           ============================================= */
+        .proj-layout-1 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+        /* =============================================
+           Project Layout 2 — Horizontal Slider
+           ============================================= */
+        .proj-layout-2 { display: flex !important; overflow: hidden; gap: 20px; padding-bottom: 16px; position: relative; }
+        .proj-layout-2 .proj-card { min-width: 300px; max-width: 300px; flex-shrink: 0; animation: marqueeScroll 75s linear infinite; }
+        .proj-layout-2:hover .proj-card { animation-play-state: paused; }
+        @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-300px * 8 - 20px * 8)); } }
+
+        /* =============================================
+           Project Layout 3 — Image Tiles (2 rows x 4)
+           ============================================= */
+        .proj-layout-3 { display: grid !important; grid-template-columns: repeat(4, 1fr); gap: 0; }
+        .proj-layout-3 .proj-card { position: relative; border-radius: 0; overflow: hidden; box-shadow: none; cursor: pointer; aspect-ratio: 4/3; }
+        .proj-layout-3 .proj-card:hover { transform: none; box-shadow: none; }
+        .proj-layout-3 .proj-card-img { position: absolute; inset: 0; height: 100% !important; width: 100%; border-radius: 0; }
+        .proj-layout-3 .proj-card-img::after { background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.05) 100%); }
+        .proj-layout-3 .proj-card-img .proj-badge { display: inline-flex; position: absolute; bottom: 12px; right: 14px; top: auto; left: auto; background: linear-gradient(135deg, #f5a623, #e8860f); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; z-index: 2; }
+        .proj-layout-3 .proj-card-img .proj-units { position: absolute; bottom: 12px; left: 14px; top: auto; transform: none; font-size: 16px; font-weight: 800; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.5); z-index: 2; }
+        .proj-layout-3 .proj-card-body { position: absolute; top: 0; left: 0; right: 0; bottom: auto; padding: 16px; background: none; z-index: 2; display: flex; flex-direction: column; align-items: center; overflow: hidden; }
+        .proj-layout-3 .proj-card-body h4 { display: block; color: #fff; font-size: 14px; font-weight: 700; text-shadow: 0 2px 6px rgba(0,0,0,0.5); text-align: center; transition: transform 0.4s ease, opacity 0.4s ease; transform: translateY(0); opacity: 1; }
+        .proj-layout-3 .proj-card:hover .proj-card-body h4 { transform: translateY(-40px); opacity: 0; }
+        .proj-layout-3 .proj-card-body .location { display: none; }
+        .proj-layout-3 .proj-card-body p { display: none; }
+        .proj-layout-3 .proj-card-footer { display: none; }
+        .proj-layout-3 .proj-card::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.35); transition: background 0.4s; z-index: 1; }
+        .proj-layout-3 .proj-card:hover::before { background: rgba(0,0,0,0); }
+
+        /* =============================================
+           Project Layout 4 — Masonry (alternating sizes)
+           ============================================= */
+        .proj-layout-4 { display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 20px; grid-auto-rows: auto; }
+        .proj-layout-4 .proj-card:nth-child(1) { grid-column: span 2; }
+        .proj-layout-4 .proj-card:nth-child(1) .proj-card-img { height: 280px; }
+        .proj-layout-4 .proj-card:nth-child(4) { grid-column: span 2; }
+        .proj-layout-4 .proj-card:nth-child(4) .proj-card-img { height: 280px; }
+        .proj-layout-4 .proj-card:nth-child(6) { grid-column: span 2; }
+        .proj-layout-4 .proj-card:nth-child(6) .proj-card-img { height: 280px; }
+
+        /* =============================================
+           Project Layout 5 — Hand of Cards (tight fan)
+           ============================================= */
+        .proj-layout-5 { display: flex !important; justify-content: center; align-items: flex-end; padding: 80px 0 40px; position: relative; min-height: 460px; }
+        .proj-layout-5 .proj-card { width: 260px; min-width: 260px; flex-shrink: 0; margin-left: -215px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.18); transition: transform 0.4s ease, box-shadow 0.4s ease, z-index 0s; transform-origin: bottom center; position: relative; }
+        .proj-layout-5 .proj-card:first-child { margin-left: 0; }
+        .proj-layout-5 .proj-card:nth-child(1) { transform: rotate(-12deg) translateY(-8px); z-index: 1; }
+        .proj-layout-5 .proj-card:nth-child(2) { transform: rotate(-8.5deg) translateY(-4px); z-index: 2; }
+        .proj-layout-5 .proj-card:nth-child(3) { transform: rotate(-5.5deg) translateY(-1px); z-index: 3; }
+        .proj-layout-5 .proj-card:nth-child(4) { transform: rotate(-2deg); z-index: 4; }
+        .proj-layout-5 .proj-card:nth-child(5) { transform: rotate(1.5deg); z-index: 5; }
+        .proj-layout-5 .proj-card:nth-child(6) { transform: rotate(5deg) translateY(-1px); z-index: 6; }
+        .proj-layout-5 .proj-card:nth-child(7) { transform: rotate(8.5deg) translateY(-4px); z-index: 7; }
+        .proj-layout-5 .proj-card:nth-child(8) { transform: rotate(12deg) translateY(-8px); z-index: 8; }
+        .proj-layout-5 .proj-card:hover { transform: rotate(0deg) translateY(-70px) scale(1.12) !important; z-index: 20 !important; box-shadow: 0 24px 60px rgba(0,0,0,0.3); }
+        .proj-layout-5 .proj-card-img { height: 180px; }
+        .proj-layout-5 .proj-card-body { padding: 14px 16px; }
+        .proj-layout-5 .proj-card-body h4 { font-size: 14px; margin-bottom: 3px; }
+        .proj-layout-5 .proj-card-body .location { font-size: 11px; margin-bottom: 4px; }
+        .proj-layout-5 .proj-card-body p { font-size: 11.5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .proj-layout-5 .proj-card-footer { display: none; }
+
+        /* Slider nav arrows */
+
+        @media (max-width: 1024px) {
+            .proj-layout-1 { grid-template-columns: repeat(2, 1fr); }
+            .proj-layout-4 { grid-template-columns: repeat(2, 1fr); }
+            .proj-layout-4 .proj-card:nth-child(1),
+            .proj-layout-4 .proj-card:nth-child(4),
+            .proj-layout-4 .proj-card:nth-child(6) { grid-column: span 1; }
+            .proj-layout-4 .proj-card:nth-child(1) .proj-card-img,
+            .proj-layout-4 .proj-card:nth-child(4) .proj-card-img,
+            .proj-layout-4 .proj-card:nth-child(6) .proj-card-img { height: 200px; }
+            .proj-layout-5 { flex-wrap: wrap; min-height: auto; padding: 20px 0; }
+            .proj-layout-5 .proj-card { margin: 8px !important; transform: none !important; width: 180px; min-width: 180px; }
+        }
+        @media (max-width: 768px) {
+            .proj-layout-3 { grid-template-columns: repeat(2, 1fr); }
+            .proj-layout-5 .proj-card { width: 100% !important; min-width: 100% !important; }
+        }
+    </style>
+    <script>
+    function applyDesign(num) {
+        const col = document.getElementById('infoCards');
+        col.className = 'vm-cards-col design-' + num;
+        const layout = col.closest('.vm-video-layout');
+        layout.className = 'vm-video-layout vm-layout-' + num;
+        document.querySelectorAll('#designSwitcher .ds-btn').forEach(btn => btn.classList.remove('ds-active'));
+        document.getElementById('ds' + num).classList.add('ds-active');
+    }
+
+    function applyProjDesign(num) {
+        const grid = document.getElementById('projGrid');
+        grid.className = 'proj-grid proj-layout-' + num;
+        document.querySelectorAll('#projSwitcher .ds-btn').forEach(btn => btn.classList.remove('ds-active'));
+        document.getElementById('pds' + num).classList.add('ds-active');
+        // Make whole card clickable in tile mode
+        document.querySelectorAll('#projGrid .proj-card').forEach(card => {
+            if (num === 3) {
+                card.onclick = () => {
+                    const link = card.querySelector('.proj-card-footer a');
+                    if (link) window.open(link.href, '_blank');
+                };
+            } else {
+                card.onclick = null;
+            }
+        });
+        // Duplicate cards for infinite marquee in slider mode
+        const clones = grid.querySelectorAll('.proj-card-clone');
+        clones.forEach(c => c.remove());
+        if (num === 2) {
+            const originals = grid.querySelectorAll('.proj-card');
+            originals.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.classList.add('proj-card-clone');
+                grid.appendChild(clone);
+            });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        applyDesign(1);
+        applyProjDesign(1);
+
+        var vid = document.querySelector('.about-video-wrap video');
+        if (vid) {
+            vid.addEventListener('timeupdate', function() {
+                var cards = document.getElementById('infoCards');
+                if (cards && cards.classList.contains('design-3')) {
+                    if (vid.currentTime >= 26) {
+                        cards.classList.add('cards-dark');
+                    } else {
+                        cards.classList.remove('cards-dark');
+                    }
+                }
+            });
+        }
+
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.21/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.21/js/utils.js"></script>
+    <style>
+        .iti { width: 100%; position: relative; }
+        .iti .iti__flag-container { left: 0 !important; }
+        input#mobilePhone { padding: 12px 16px 12px 95px !important; border: 1.5px solid #e0e0e0 !important; border-radius: 9px !important; font-size: 14px !important; font-family: 'Inter', sans-serif !important; color: #333 !important; background: #fafafa !important; height: auto !important; width: 100% !important; box-sizing: border-box !important; line-height: 1.5 !important; }
+        input#mobilePhone:focus { border-color: var(--teal) !important; box-shadow: 0 0 0 3px rgba(26,95,122,0.1) !important; background: #fff !important; outline: none !important; }
+        .iti__selected-flag { border-radius: 9px 0 0 9px; }
+        .iti__country-list { z-index: 100; }
+        .fg:has(.iti) { position: relative; z-index: 2; }
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var phoneInput = document.querySelector('#mobilePhone');
+        var iti = window.intlTelInput(phoneInput, {
+            initialCountry: 'sa',
+            preferredCountries: ['sa', 'ae', 'bh', 'kw', 'om', 'qa', 'jo', 'eg'],
+            separateDialCode: true,
+            nationalMode: true,
+            autoPlaceholder: 'aggressive',
+            utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.21/js/utils.js'
+        });
+        // Store full number on form submit
+        var form = phoneInput.closest('form');
+        if (form) {
+            form.addEventListener('submit', function() {
+                document.getElementById('fullPhone').value = iti.getNumber();
+            });
+        }
+    });
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="#">
+                    <img src="DWE-Full-Colour-dark.svg" alt="DWE Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#journey">How It Works</a></li>
+                    <li><a href="#consultation-form">Request Consultation</a></li>
+                </ul>
+            </nav>
+            <div class="demo-badge">
+                <i class="fas fa-flask"></i> Employee Portal DEMO
+            </div>
+            <div class="header-actions">
+                <div class="lang-switch">
+                    <a href="partnerV2.html" class="active">EN</a>
+                    <span>|</span>
+                    <a href="partnerV2-ar.html">AR</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 1. Hero Section -->
+        <section class="hero-wrap">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-left">
+                        <div class="hero-partnership">
+                            <span class="dwe-label">DAR WA EMAAR</span>
+                            <span class="sep">&times;</span>
+                            <span class="excl">CORPORATE PARTNERSHIPS</span>
+                        </div>
+                        <h1>Welcome to Dar Wa Emaar <span>Corporate Partnerships</span></h1>
+                        <p>Dar Wa Emaar is pleased to offer employees of our partner organizations exclusive access to residential opportunities across our communities, along with tailored benefits and flexible ownership programs designed to support long-term residential stability.</p>
+                        <div class="hero-btns">
+                            <a href="#projects" class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'}); return false;"><i class="fas fa-building"></i> Explore Projects</a>
+                            <a href="#consultation-form" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:#fff;" onclick="document.getElementById('consultation-form').scrollIntoView({behavior:'smooth'}); return false;"><i class="fas fa-calendar-check"></i> Request Consultation</a>
+                        </div>
+                    </div>
+                    <div class="hero-right">
+                        <div class="hero-stats">
+                            <div class="stat-box"><div class="num">20+</div><div class="lbl">Years of Experience</div></div>
+                            <div class="stat-box"><div class="num">13</div><div class="lbl">Residential Communities</div></div>
+                            <div class="stat-box"><div class="num">9,000+</div><div class="lbl">Residential Units</div></div>
+                            <div class="stat-box"><div class="num">6</div><div class="lbl">Cities Across KSA</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About the Partnership Program + Video -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <p class="sl">Partnership Program</p>
+                <h2 class="st">About the Corporate Partnership Program</h2>
+                <p class="ss">Privileged access to residential opportunities, special offers, and dedicated support throughout your homeownership journey.</p>
+
+                <!-- Design Switcher Menu -->
+                <div id="designSwitcher" style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; font-family: 'Inter', sans-serif;">
+                    <span style="background: var(--navy); color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;">Card Style</span>
+                    <button onclick="applyDesign(1)" class="ds-btn ds-active" id="ds1">1 — Two Boxes</button>
+                    <button onclick="applyDesign(2)" class="ds-btn" id="ds2">2 — Floating Text</button>
+                    <button onclick="applyDesign(3)" class="ds-btn" id="ds3">3 — Unified Card</button>
+                    <button onclick="applyDesign(4)" class="ds-btn" id="ds4">4 — Timeline</button>
+                    <button onclick="applyDesign(5)" class="ds-btn" id="ds5">5 — Magazine</button>
+                </div>
+
+                <div class="vm-video-layout">
+                    <div class="vm-cards-col" id="infoCards">
+                        <div class="info-card info-card-1" id="card1">
+                            <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                            <h3>What Is This Program?</h3>
+                            <p>This page is part of Dar Wa Emaar's Corporate Partnership Program, which aims to provide employees of partner organizations with privileged access to residential opportunities, special offers, and dedicated support throughout their homeownership journey.</p>
+                        </div>
+                        <div class="info-card info-card-2" id="card2">
+                            <div class="card-icon"><i class="fas fa-star"></i></div>
+                            <h3>Why Partner with DWE?</h3>
+                            <p>As a leading Saudi real estate developer with over 20 years of experience, Dar Wa Emaar delivers quality communities designed for families. Our partnership program ensures your employees receive preferential treatment and dedicated guidance.</p>
+                        </div>
+                    </div>
+                    <!-- Video with animated borders — copied from partner.html -->
+                    <div class="about-video-wrap">
+                        <div class="about-video-inner">
+                            <video autoplay muted playsinline>
+                                <source src="DWEIntro.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-white-mask"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Latest Projects -->
+        <section class="projects-section" id="projects">
+            <div class="container">
+                <p class="sl">Our Portfolio</p>
+                <h2 class="st">Latest Projects</h2>
+                <p class="ss">Selected residential communities developed by Dar Wa Emaar, available to partner employees.</p>
+
+                <!-- Projects Layout Switcher -->
+                <div id="projSwitcher" style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; font-family: 'Inter', sans-serif;">
+                    <span style="background: var(--navy); color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;">Layout</span>
+                    <button onclick="applyProjDesign(1)" class="ds-btn ds-active" id="pds1">1 — Grid</button>
+                    <button onclick="applyProjDesign(2)" class="ds-btn" id="pds2">2 — Slider</button>
+                    <button onclick="applyProjDesign(3)" class="ds-btn" id="pds3">3 — Tiles</button>
+                    <button onclick="applyProjDesign(4)" class="ds-btn" id="pds4">4 — Masonry</button>
+                    <button onclick="applyProjDesign(5)" class="ds-btn" id="pds5">5 — Stacked Deck</button>
+                </div>
+
+                <div class="proj-grid proj-layout-1" id="projGrid">
+                    <!-- 1. Saraya Al-Fursan 3 -->
+                    <div class="proj-card">
+                        <div class="proj-card-img" style="background-image: url('https://darwaemaar.com/wp-content/uploads/2025/12/Al-Fursan-Communities-Brochure3-11-1-scaled.jpg');">
+                            <span class="proj-badge">Riyadh</span>
+                            <span class="proj-units"><i class="fas fa-home"></i> 1,718 Units</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <h4>Saraya Al-Fursan 3</h4>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Riyadh</div>
+                            <p>The latest addition to the Fursan series, offering modern residential living in one of Riyadh's most promising developments.</p>
+                        </div>
+                        <div class="proj-card-footer">
+                            <a href="https://darwaemaar.com/project/al-fursan-3/" target="_blank" class="btn btn-outline">View Project <i class="fas fa-external-link-alt" style="font-size:11px;"></i></a>
+                        </div>
+                    </div>
+                    <!-- 2. Al-Narjes Residence -->
+                    <div class="proj-card">
+                        <div class="proj-card-img" style="background-image: url('https://darwaemaar.com/wp-content/uploads/2026/01/Al-Narjis-Residence-Brochure4-30-1-scaled.jpg');">
+                            <span class="proj-badge">Riyadh</span>
+                            <span class="proj-units"><i class="fas fa-home"></i> 585 Units</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <h4>Al-Narjes Residence</h4>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Riyadh</div>
+                            <p>Contemporary designs at the intersection of Othman bin Affan and King Salman roads with full-service amenities.</p>
+                        </div>
+                        <div class="proj-card-footer">
+                            <a href="https://darwaemaar.com/project/al-narjes-residence/" target="_blank" class="btn btn-outline">View Project <i class="fas fa-external-link-alt" style="font-size:11px;"></i></a>
+                        </div>
+                    </div>
+                    <!-- 3. Saraya Al-Ruba -->
+                    <div class="proj-card">
+                        <div class="proj-card-img" style="background-image: url('https://darwaemaar.com/wp-content/uploads/2025/08/FRONT-ELEVATION-2-2.jpg');">
+                            <span class="proj-badge">East Riyadh</span>
+                            <span class="proj-units"><i class="fas fa-home"></i> 1,155 Units</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <h4>Saraya Al-Ruba</h4>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> East Riyadh</div>
+                            <p>A modern architectural masterpiece with 8 distinct residential models near National Guard Hospital.</p>
+                        </div>
+                        <div class="proj-card-footer">
+                            <a href="https://darwaemaar.com/project/saraya-al-ruba-2/" target="_blank" class="btn btn-outline">View Project <i class="fas fa-external-link-alt" style="font-size:11px;"></i></a>
+                        </div>
+                    </div>
+                    <!-- 4. Tala Al-Khuzam -->
+                    <div class="proj-card">
+                        <div class="proj-card-img" style="background-image: url('https://tala-khuzam.darwaemaar.com/wp-content/uploads/2024/12/tala.jpg');">
+                            <span class="proj-badge">North Riyadh</span>
+                            <span class="proj-units"><i class="fas fa-home"></i> 1,298 Units</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <h4>Tala Al-Khuzam</h4>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> North Riyadh</div>
+                            <p>Part of NHC's major suburban development spanning over 30 million sqm near King Khalid International Airport.</p>
+                        </div>
+                        <div class="proj-card-footer">
+                            <a href="https://tala-khuzam.darwaemaar.com/en/" target="_blank" class="btn btn-outline">View Project <i class="fas fa-external-link-alt" style="font-size:11px;"></i></a>
+                        </div>
+                    </div>
+                    <!-- 5. Saraya Al-Fursan 2 -->
+                    <div class="proj-card">
+                        <div class="proj-card-img" style="background-image: url('https://darwaemaar.com/wp-content/uploads/2024/10/A1_NoFence-1.jpg');">
+                            <span class="proj-badge">NE Riyadh</span>
+                            <span class="proj-units"><i class="fas fa-home"></i> 718 Units</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <h4>Saraya Al-Fursan 2</h4>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Northeast Riyadh</div>
+                            <p>Part of a 35-million-sqm development, 14km from the airport and connected to the metro network.</p>
+                        </div>
+                        <div class="proj-card-footer">
+                            <a href="https://darwaemaar.com/project/saraya-al-fursan-2/" target="_blank" class="btn btn-outline">View Project <i class="fas fa-external-link-alt" style="font-size:11px;"></i></a>
+                        </div>
+                    </div>
+                    <!-- 6. Tala Al-Seef -->
+                    <div class="proj-card">
+                        <div class="proj-card-img" style="background-image: url('https://tala-al-seef.darwaemaar.com/wp-content/uploads/2025/12/Groupe-54461-1.png');">
+                            <span class="proj-badge">Al Khobar</span>
+                            <span class="proj-units"><i class="fas fa-home"></i> 135 Units</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <h4>Tala Al-Seef</h4>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Al Khobar</div>
+                            <p>A boutique collection featuring full-height glass walls and panoramic views from every angle.</p>
+                        </div>
+                        <div class="proj-card-footer">
+                            <a href="https://tala-al-seef.darwaemaar.com" target="_blank" class="btn btn-outline">View Project <i class="fas fa-external-link-alt" style="font-size:11px;"></i></a>
+                        </div>
+                    </div>
+                    <!-- 7. Saraya Al-Sharq -->
+                    <div class="proj-card">
+                        <div class="proj-card-img" style="background-image: url('https://darwaemaar.com/wp-content/uploads/2024/12/Type（C-D）Perspective-scaled.jpg');">
+                            <span class="proj-badge">Dammam</span>
+                            <span class="proj-units"><i class="fas fa-home"></i> 616 Units</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <h4>Saraya Al-Sharq</h4>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Dammam</div>
+                            <p>A landmark waterfront development emphasizing modern design, quality planning, and integrated facilities.</p>
+                        </div>
+                        <div class="proj-card-footer">
+                            <a href="https://darwaemaar.com/project/saraya-al-sharq-2/" target="_blank" class="btn btn-outline">View Project <i class="fas fa-external-link-alt" style="font-size:11px;"></i></a>
+                        </div>
+                    </div>
+                    <!-- 8. Saraya Al-Badr -->
+                    <div class="proj-card">
+                        <div class="proj-card-img" style="background-image: url('https://darwaemaar.com/wp-content/uploads/2023/06/View_Of_The_Cluster_Final-scaled.jpg');">
+                            <span class="proj-badge">Madinah</span>
+                            <span class="proj-units"><i class="fas fa-home"></i> 634 Units</span>
+                        </div>
+                        <div class="proj-card-body">
+                            <h4>Saraya Al-Badr</h4>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Madinah</div>
+                            <p>Less than 15 minutes from the Prophet's Mosque, connected to main transportation networks.</p>
+                        </div>
+                        <div class="proj-card-footer">
+                            <a href="https://darwaemaar.com/project/saraya-al-bader/" target="_blank" class="btn btn-outline">View Project <i class="fas fa-external-link-alt" style="font-size:11px;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Exclusive Benefits for Partner Employees -->
+        <section class="benefits-section" id="benefits">
+            <div class="container">
+                <p class="sl">Partner Advantages</p>
+                <h2 class="st">Exclusive Benefits for Partner Employees</h2>
+                <p class="ss">As an employee of one of our partner organizations, you enjoy the following advantages.</p>
+                <div class="ben-grid">
+                    <div class="ben-item">
+                        <i class="fas fa-tag"></i>
+                        <h4>Priority Access</h4>
+                        <p>Priority access to selected residential units before public availability.</p>
+                    </div>
+                    <div class="ben-item">
+                        <i class="fas fa-gift"></i>
+                        <h4>Exclusive Offers</h4>
+                        <p>Exclusive promotional offers and preferential pricing for partner employees.</p>
+                    </div>
+                    <div class="ben-item">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>Dedicated Advisor</h4>
+                        <p>A dedicated corporate sales advisor assigned to guide you throughout the process.</p>
+                    </div>
+                    <div class="ben-item">
+                        <i class="fas fa-wallet"></i>
+                        <h4>Flexible Payment</h4>
+                        <p>Flexible payment solutions and financing options where applicable.</p>
+                    </div>
+                    <div class="ben-item">
+                        <i class="fas fa-comments"></i>
+                        <h4>Personalized Guidance</h4>
+                        <p>Personalized consultation and project guidance tailored to your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Showcase -->
+        <div class="parallax-img" style="background-image: url('1.webp');"></div>
+        <div class="parallax-img" style="background-image: url('2.webp');"></div>
+
+        <!-- 5. Homeownership Journey -->
+        <section class="journey-section" id="journey">
+            <div class="container">
+                <p class="sl">Your Path to Homeownership</p>
+                <h2 class="st">Homeownership Journey</h2>
+                <p class="ss">A simple and clear process to help you find and own your ideal home.</p>
+                <div class="journey-grid">
+                    <div class="journey-step">
+                        <div class="journey-num"><i class="fas fa-search"></i></div>
+                        <h4>Explore Communities</h4>
+                        <p>Browse available residential communities and find what suits your lifestyle.</p>
+                    </div>
+                    <div class="journey-step">
+                        <div class="journey-num"><i class="fas fa-calendar-check"></i></div>
+                        <h4>Request a Consultation</h4>
+                        <p>Submit a consultation request and our team will reach out to assist you.</p>
+                    </div>
+                    <div class="journey-step">
+                        <div class="journey-num"><i class="fas fa-map-marked-alt"></i></div>
+                        <h4>Schedule a Visit</h4>
+                        <p>Visit the project site to experience the community and available units firsthand.</p>
+                    </div>
+                    <div class="journey-step">
+                        <div class="journey-num"><i class="fas fa-home"></i></div>
+                        <h4>Select Your Unit</h4>
+                        <p>Choose your preferred unit type, layout, and location within the community.</p>
+                    </div>
+                    <div class="journey-step">
+                        <div class="journey-num"><i class="fas fa-key"></i></div>
+                        <h4>Complete Ownership</h4>
+                        <p>Finalize the process with the support of your dedicated sales advisor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="parallax-footer" style="background-image: url('3.png');"></div>
+        <div class="parallax-footer" style="background-image: url('4.jpg');"></div>
+
+        <!-- 6. Request Consultation (Lead Form) -->
+        <section class="form-section" id="consultation-form">
+            <div class="container">
+                <div class="form-card">
+                    <div class="form-top">
+                        <div class="form-top-ico"><img src="DWE-Full-Colour-dark.svg" alt="DWE Logo" style="width: 40px; height: auto;"></div>
+                        <div>
+                            <h2>Consultation Request Form</h2>
+                            <p>All information is kept strictly confidential and used solely to process your request.</p>
+                        </div>
+                    </div>
+                    <div class="form-body">
+                        <div class="success-box" id="success-box">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Request Submitted Successfully!</strong>
+                                <span>Thank you! Our Sales Team will be in touch with you shortly.</span>
+                            </div>
+                        </div>
+
+                        <form id="consultation-form-el" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                            <div class="fg-grid">
+                                <div class="fg">
+                                    <label><i class="fas fa-user"></i> Full Name</label>
+                                    <input type="text" name="FullName" placeholder="Your full name" required>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-envelope"></i> Work Email</label>
+                                    <input type="email" name="WorkEmail" placeholder="name@company.com" required>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-phone"></i> Mobile Number</label>
+                                    <input type="tel" id="mobilePhone" name="MobileNumber" required>
+                                    <input type="hidden" id="fullPhone" name="FullMobileNumber">
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-building"></i> Company Name</label>
+                                    <input type="text" name="CompanyName" placeholder="Your organization" required>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-home"></i> Interested Project</label>
+                                    <select name="InterestedProject" required>
+                                        <option value="">-- Select project --</option>
+                                        <option value="Saraya Al-Fursan 3">Saraya Al-Fursan 3</option>
+                                        <option value="Al-Narjes Residence">Al-Narjes Residence</option>
+                                        <option value="Saraya Al-Ruba">Saraya Al-Ruba</option>
+                                        <option value="Tala Al-Khuzam">Tala Al-Khuzam</option>
+                                        <option value="Saraya Al-Fursan 2">Saraya Al-Fursan 2</option>
+                                        <option value="Tala Al-Seef">Tala Al-Seef</option>
+                                        <option value="Saraya Al-Sharq">Saraya Al-Sharq</option>
+                                        <option value="Saraya Al-Badr">Saraya Al-Badr</option>
+                                        <option value="Other">Other / Not Sure</option>
+                                    </select>
+                                </div>
+                                <div class="fg">
+                                    <label><i class="fas fa-clock"></i> Preferred Contact Time</label>
+                                    <select name="PreferredContactTime" required>
+                                        <option value="">-- Select time --</option>
+                                        <option value="Morning (9AM-12PM)">Morning (9AM - 12PM)</option>
+                                        <option value="Afternoon (12PM-3PM)">Afternoon (12PM - 3PM)</option>
+                                        <option value="Evening (3PM-6PM)">Evening (3PM - 6PM)</option>
+                                        <option value="Anytime">Anytime</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div style="margin-top:28px;">
+                                <button type="submit" class="btn btn-primary btn-block" style="font-size:16px; padding:15px; background: #ec661b; border:none; transition: all 0.3s;" onmouseover="this.style.background='#1a1a1a'" onmouseout="this.style.background='#ec661b'">
+                                    <i class="fas fa-paper-plane"></i>&nbsp; Submit Request
+                                </button>
+                                <p style="text-align:center; font-size:12px; color:#aaa; margin-top:14px;">
+                                    <i class="fas fa-lock"></i>&nbsp; Your information is secure and will be routed directly to the Sales team.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Salesforce Integration Info (disabled) -->
+        <section class="sf-section" style="display: none;">
+            <div class="container">
+                <p class="sl">CRM Integration</p>
+                <h2 class="st">Salesforce Lead Management</h2>
+                <p class="ss">All consultation requests are automatically captured and tracked in Salesforce.</p>
+                <div class="sf-grid">
+                    <div class="sf-info">
+                        <h3><i class="fas fa-cloud" style="color: var(--teal); margin-right: 8px;"></i>Automatic Lead Capture</h3>
+                        <p>Form submissions are integrated directly with Salesforce so that all inquiries are automatically captured as leads. This allows the Sales team to track and manage leads generated through the B2B partnership program.</p>
+                        <div class="sf-tags">
+                            <span class="sf-tag"><i class="fas fa-tag" style="margin-right: 5px;"></i>Lead Source: Corporate Partnership (B2B)</span>
+                            <span class="sf-tag"><i class="fas fa-building" style="margin-right: 5px;"></i>Company Name: Partner Organization</span>
+                            <span class="sf-tag"><i class="fas fa-home" style="margin-right: 5px;"></i>Project Interest</span>
+                            <span class="sf-tag"><i class="fas fa-address-book" style="margin-right: 5px;"></i>Contact Details</span>
+                        </div>
+                    </div>
+                    <div class="sf-flow">
+                        <div class="sf-flow-step"><div class="sf-flow-num">1</div><p><strong>Employee submits</strong> consultation form on the B2B page</p></div>
+                        <div class="sf-flow-step"><div class="sf-flow-num">2</div><p><strong>Lead is created</strong> automatically in Salesforce</p></div>
+                        <div class="sf-flow-step"><div class="sf-flow-num">3</div><p><strong>Lead Source tagged</strong> as Corporate Partnership (B2B)</p></div>
+                        <div class="sf-flow-step"><div class="sf-flow-num">4</div><p><strong>Lead assigned</strong> to Corporate / B2B Sales Advisor</p></div>
+                        <div class="sf-flow-step"><div class="sf-flow-num">5</div><p><strong>Sales advisor contacts</strong> employee for consultation</p></div>
+                        <div class="sf-flow-step"><div class="sf-flow-num">6</div><p><strong>Lead progresses</strong> through the normal sales pipeline</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="DWE-Full-Colour-white.svg" alt="DWE Logo" class="footer-logo">
+                    <p>Building communities that inspire better living.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Latest Projects</h4>
+                    <ul>
+                        <li><a href="#">Saraya Al-Narjis</a></li>
+                        <li><a href="#">Tala Al-Khuzam</a></li>
+                        <li><a href="#">Tala Al-Seef</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About DWE</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Office Locations</h4>
+                    <p><strong>Khobar Office</strong><br>King Fahd Road, Al Khobar</p>
+                    <p><strong>Riyadh Office</strong><br>Olaya Street, Riyadh</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dar Wa Emaar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form AJAX submission
+        const form = document.getElementById('consultation-form-el');
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    const successBox = document.getElementById('success-box');
+                    successBox.style.display = 'flex';
+                    form.style.display = 'none';
+                    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (err) {
+                alert('Network error. Please try again.');
+            }
+        });
+
+        // Video border animation — copied from partner.html
+        (function() {
+            var video = document.querySelector('.about-video-wrap video');
+            if (!video) return;
+
+            var dynamicStyle = document.createElement('style');
+            document.head.appendChild(dynamicStyle);
+
+            function lerp(a, b, t) {
+                return Math.round(a + (b - a) * t);
+            }
+
+            function updateBorderColor() {
+                var t = video.currentTime;
+                var r, g, b;
+
+                if (t <= 20) {
+                    r = 30; g = 30; b = 30;
+                } else if (t <= 24) {
+                    var p = (t - 20) / 4;
+                    r = lerp(30, 236, p); g = lerp(30, 102, p); b = lerp(30, 27, p);
+                } else if (t <= 26) {
+                    r = 236; g = 102; b = 27;
+                } else if (t <= 28) {
+                    var p = (t - 26) / 2;
+                    r = lerp(236, 255, p); g = lerp(102, 255, p); b = lerp(27, 255, p);
+                } else {
+                    r = 255; g = 255; b = 255;
+                }
+
+                var opacity = 1;
+                if (t > 26) {
+                    opacity = Math.max(0, 1 - (t - 26) / 2);
+                }
+
+                var c = 'rgb(' + r + ',' + g + ',' + b + ')';
+                var rad = opacity > 0 ? '4px' : '0';
+                var pad = Math.round(8 * opacity) + 'px';
+                dynamicStyle.textContent =
+                    '.about-video-wrap { padding: ' + pad + ' !important; }' +
+                    '.about-video-wrap::before { background: linear-gradient(to bottom, ' + c + ' 70%, transparent) !important; opacity: ' + opacity + '; }' +
+                    '.about-video-wrap::after { background: linear-gradient(to top, ' + c + ' 70%, transparent) !important; opacity: ' + opacity + '; }' +
+                    '.about-video-inner::before, .about-video-inner::after { background: ' + c + ' !important; opacity: ' + opacity + '; }' +
+                    '.about-video-wrap video { border-radius: ' + rad + ' !important; }' +
+                    '.video-white-mask { opacity: ' + (1 - opacity) + ' !important; }';
+            }
+
+            video.addEventListener('timeupdate', updateBorderColor);
+            video.play().catch(function() {});
+        })();
+    </script>
+</body>
+</html>
