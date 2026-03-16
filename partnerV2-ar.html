@@ -113,9 +113,14 @@
         .ben-item p { font-size: 13px; color: #666; line-height: 1.8; margin: 0; }
 
         /* Journey */
-        .parallax-img { height: 100vh; background-attachment: fixed; background-size: cover; background-position: center; position: relative; }
-        .parallax-img + .parallax-img { margin-top: 0; }
-        .parallax-footer { height: 100vh; background-attachment: fixed; background-size: cover; background-position: center; position: relative; }
+        /* Image Comparison Slider */
+        .img-compare { position: relative; width: 100%; height: 100vh; overflow: hidden; cursor: col-resize; user-select: none; -webkit-user-select: none; }
+        .img-compare img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+        .img-compare .img-top { clip-path: inset(0 50% 0 0); }
+        .img-compare .img-slider { position: absolute; top: 0; left: 50%; width: 3px; height: 100%; background: #fff; z-index: 3; transform: translateX(-50%); box-shadow: 0 0 8px rgba(0,0,0,0.4); }
+        .img-compare .img-slider-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; background: #fff; border-radius: 50%; box-shadow: 0 2px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; z-index: 4; }
+        .img-compare .img-slider-handle::before { content: '◀ ▶'; font-size: 11px; color: #333; letter-spacing: 2px; }
+        .parallax-footer { height: 70vh; background-attachment: fixed; background-size: cover; background-position: center; position: relative; }
         .parallax-footer::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
         .journey-section { padding: 80px 0; background: var(--navy); }
         .journey-section .sl { color: var(--gold); }
@@ -424,8 +429,8 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        applyDesign(1);
-        applyProjDesign(1);
+        applyDesign(5);
+        applyProjDesign(2);
 
         var vid = document.querySelector('.about-video-wrap video');
         if (vid) {
@@ -451,6 +456,27 @@
                 });
             }, { threshold: 0.3 });
             observer.observe(vid.closest('.vm-video-layout'));
+        }
+
+        // Image comparison slider
+        var comp = document.getElementById('imgCompare');
+        if (comp) {
+            var slider = comp.querySelector('.img-slider');
+            var topImg = comp.querySelector('.img-top');
+            var dragging = false;
+            function moveSlider(x) {
+                var rect = comp.getBoundingClientRect();
+                var pos = Math.max(0, Math.min(x - rect.left, rect.width));
+                var pct = (pos / rect.width) * 100;
+                slider.style.left = pct + '%';
+                topImg.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+            }
+            comp.addEventListener('mousedown', function(e) { dragging = true; moveSlider(e.clientX); });
+            window.addEventListener('mousemove', function(e) { if (dragging) moveSlider(e.clientX); });
+            window.addEventListener('mouseup', function() { dragging = false; });
+            comp.addEventListener('touchstart', function(e) { dragging = true; moveSlider(e.touches[0].clientX); }, { passive: true });
+            window.addEventListener('touchmove', function(e) { if (dragging) moveSlider(e.touches[0].clientX); }, { passive: true });
+            window.addEventListener('touchend', function() { dragging = false; });
         }
 
     });
@@ -553,7 +579,7 @@
                 <p class="ss">وصول مميز إلى الفرص السكنية وعروض خاصة ودعم مخصص طوال رحلة التملك.</p>
 
                 <!-- Design Switcher Menu -->
-                <div id="designSwitcher" style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; font-family: 'Inter', sans-serif;">
+                <div id="designSwitcher" style="display: none; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; font-family: 'Inter', sans-serif;">
                     <span style="background: var(--navy); color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 11px; font-weight: 700; letter-spacing: 1px; white-space: nowrap;">تصميم البطاقات</span>
                     <button onclick="applyDesign(1)" class="ds-btn ds-active" id="ds1">1 — صندوقين</button>
                     <button onclick="applyDesign(2)" class="ds-btn" id="ds2">2 — نص عائم</button>
@@ -594,7 +620,7 @@
                 <p class="ss">مجتمعات سكنية مختارة من تطوير دار وإعمار، متاحة لموظفي الشركاء.</p>
 
                 <!-- Projects Layout Switcher -->
-                <div id="projSwitcher" style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; font-family: 'Inter', sans-serif;">
+                <div id="projSwitcher" style="display: none; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; font-family: 'Inter', sans-serif;">
                     <span style="background: var(--navy); color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 11px; font-weight: 700; letter-spacing: 1px; white-space: nowrap;">التخطيط</span>
                     <button onclick="applyProjDesign(1)" class="ds-btn ds-active" id="pds1">1 — شبكة</button>
                     <button onclick="applyProjDesign(2)" class="ds-btn" id="pds2">2 — شريط متحرك</button>
@@ -756,8 +782,13 @@
         </section>
 
         <!-- معرض الصور -->
-        <div class="parallax-img" style="background-image: url('1.webp');"></div>
-        <div class="parallax-img" style="background-image: url('2.webp');"></div>
+        <div class="img-compare" id="imgCompare">
+            <img src="2.webp" alt="Image 2" class="img-bottom">
+            <img src="1.webp" alt="Image 1" class="img-top">
+            <div class="img-slider">
+                <div class="img-slider-handle"></div>
+            </div>
+        </div>
 
         <!-- 5. رحلة التملك -->
         <section class="journey-section" id="journey">
